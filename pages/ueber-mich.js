@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 //STYLES
 import styles from '../styles/aboutme.module.css'
-
+/*
 export const getServerSideProps = async () =>{
   try {
     const response = await fetch("https://swapi.dev/api/people/");
@@ -31,12 +31,11 @@ export const getServerSideProps = async () =>{
 }
 
 
+*/
 
 
+const AboutMe = () =>{
 
-const AboutMe = ({people}) =>{
-
-  console.log(people)
 
 
 
