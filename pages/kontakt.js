@@ -3,30 +3,9 @@ import { useForm, ValidationError } from "@formspree/react";
 import Layout from "@/components/Layout";
 
 
-export const getServerSideProps = async () =>{
-  
-  try{
-    const response = await fetch("https://swapi.dev/api/people/");
-    const data = await response.json();
 
-    return{
-      props:{
-        people: data.results
-      }
-    }
 
-  } catch (error){
-    console.log(error)
-
-    return{
-      props:{
-        people: []
-      }
-    }
-  }
-}
-
-const Contact = ({people}) => {
+const Contact = () => {
   const submitFormHandler = () => {};
 
   const [state, handleSubmit] = useForm("....")
@@ -39,13 +18,7 @@ const Contact = ({people}) => {
     <div>
       <Layout>
         <h1>Contact</h1>
-        {people.map((person) =>(
-          <div key={person.name}>
-            <p> {person.name}</p>
-            <p> {person.height}</p>
-
-          </div>
-        ))}
+        
         <form onSubmit={handleSubmit}>
           <label htmlFor="fName"> Vorname* </label>
           <input
