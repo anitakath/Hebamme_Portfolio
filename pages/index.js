@@ -15,6 +15,7 @@ const Start = () => {
      
         <Layout> 
             <h1> Startseite </h1>
+            <p> Moincito </p>
         </Layout>
        
     </div>
