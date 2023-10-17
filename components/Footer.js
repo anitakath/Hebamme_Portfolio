@@ -1,12 +1,28 @@
+import Link from 'next/link';
 
 
-const Footer = () =>{
 
-    return(
-        <div>
-            <h1> Footer</h1>
-        </div>
-    )
+//STYLES
+import styles from '../styles/Footer.module.css'
+
+
+function Footer() {
+  return (
+    <div className={styles.footerContainer}>
+      <p> © 2023 Shaana Brown Näckler | Alle Rechte vorbehalten </p>
+      <div className={styles.footerInformation}>
+        <Link href="/datensicherheit" className={styles.dataprivacyLink}>
+          {" "}
+          Datenschutz{" "}
+        </Link>{" "}
+        |
+        <Link href="/impressum" className={styles.dataprivacyLink}>
+          {" "}
+          Impressum{" "}
+        </Link>
+      </div>
+    </div>
+  );
 }
 
 export default Footer;

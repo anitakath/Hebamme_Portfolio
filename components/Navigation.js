@@ -1,23 +1,43 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Link from "next/link";
+
+
+//COMPONENTS
+import NavLink from "./NavLink";
+
+
+//STYLES
+import styles from '../styles/Navigation.module.css'
+
+
+
+
+
+
 
 const Navigation = () => {
   return (
-    <nav>
-      <ul>
+    <nav className={styles.navigationContainer}>
+      <ul className={styles.navigation}>
         <li>
-          <Link href="/AboutMe">Über mich</Link>
+          <NavLink href="/ueber-mich">Über mich</NavLink>
         </li>
         <li>
-          <Link href="/MyWork">Meine Dienstleistungen</Link>
+          <NavLink href="/meine-dienstleistungen">Meine Dienstleistungen</NavLink>
         </li>
         <li>
-          <Link href="/Contact">Kontakt</Link>
+          <NavLink href="/kontakt">Kontakt</NavLink>
         </li>
         <li>
-          <Link href="/">Startseite</Link>
+          <NavLink href="/">Startseite</NavLink>
         </li>
       </ul>
+
+
+       <div className={styles.mobileNav}>
+
+       </div>
+      
     </nav>
   );
 };

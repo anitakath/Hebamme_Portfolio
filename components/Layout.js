@@ -2,11 +2,14 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
+
+//STYLES
+import styles from '../styles/Layout.module.css'
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className={styles.layout}>
       <Header />
-      <main>{children}</main>
+      <div className={styles.layoutChildren}>{children}</div>
       <Footer />
     </div>
   );

@@ -1,0 +1,118 @@
+
+
+
+
+.headerNavigation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff80;
+    z-index: 1000;
+}
+
+.headerTitle{
+    width: 40vw;
+    font-size: 1.7rem;
+    text-align: center;
+    transiton: 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+.headerImgContainer{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+
+
+.headerImg{
+    width: 100vw;
+    height: 100vh;
+    transition: 0.2s ease;
+    object-fit: cover;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1300px){
+
+    .headerTitle{
+        width: 50vw;
+        font-size: 2rem;
+        margin-left: 20px;
+    }
+
+    
+}
+
+@media screen and (max-width: 1200px){
+    .headerTitle{
+        font-size: 1.9rem;  
+    }
+}
+
+@media screen and (max-width: 1000px){
+
+    .headerTitle{
+        width: 70vw;
+        margin: 20px;
+    }
+
+   
+}
+
+@media screen and (max-width: 900px){
+
+     .headerImg{
+        display: none;
+    }
+
+    .headerImgMobile{
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    
+    .headerTitle{
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .headerTitle{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .headerTitle{
+        font-size: 1rem;
+    }
+
+    .headerImgMobile{
+        width: 130vw;
+    }
+}
+
+
+
+

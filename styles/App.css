@@ -1,0 +1,90 @@
+
+
+
+body{
+  margin: 0;
+  height: 100vh;
+  overflow: scroll;
+  padding: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsla(0, 0%, 85%, 0.5);
+  overflow-x: hidden;
+
+}
+
+.main-container{
+    width: 100vw;
+    height: 83vh;
+}
+
+#welcome{
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 8px;
+}
+
+
+
+li{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Courier New', Courier, monospace;
+  font-size: 1.4rem;
+}
+
+p{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Raleway', sans-serif, 'Quicksand', sans-serif, 'Courier New', Courier, monospace;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  font-weight:bolder;
+}
+
+
+
+h1{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Raleway', sans-serif, 'Quicksand', sans-serif, 'Courier New', Courier, monospace;
+  
+}
+
+h2{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Raleway', sans-serif, 'Quicksand', sans-serif, 'Courier New', Courier, monospace;
+  
+}
+
+label{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Quicksand', sans-serif, 'Raleway', sans-serif, 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+input{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Slabo 27px', serif, 'Courier New', Courier, monospace;
+}
+
+button{
+  font-family: 'Be Vietnam Pro', sans-serif,  'Nanum Gothic', sans-serif, 'Raleway', sans-serif, 'Times New Roman', Times, serif, 'Courier New', Courier, monospace;
+}
+
+
+h3{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Courier New', Courier, monospace;
+ 
+}
+
+h4{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Quicksand', sans-serif, 'Courier New', Courier, monospace;
+  
+}
+
+h5{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Raleway', sans-serif, 'Courier New', Courier, monospace;
+  
+}
+
+h6{
+  font-family: 'Be Vietnam Pro', sans-serif, 'Slabo 27px', serif, 'Courier New', Courier, monospace;
+}
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;1,100&display=swap');
+

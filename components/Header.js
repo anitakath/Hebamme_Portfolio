@@ -1,12 +1,17 @@
 import Navigation from "./Navigation";
 
-const Header = () => {
+
+//STYLES
+import styles from '../styles/Header.module.css'
+
+
+function Header() {
   return (
-    <div>
-      <h1> Header</h1>
+    <div className={styles.headerNavigation}>
+      <h1 className={styles.headerTitle}> Shaana Brown Näckler, Hebamme</h1>
       <Navigation />
     </div>
   );
-};
+}
 
 export default Header;

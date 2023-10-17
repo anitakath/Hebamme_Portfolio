@@ -1,0 +1,17 @@
+
+.active{
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: #89CFF0;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: center;
+}
+
+.inactive{
+    transition: 0.3s ease;
+    color: hsl(0, 0%, 35%);
+    text-decoration: none;
+    text-align: center;
+    text-weight: bolder;
+}

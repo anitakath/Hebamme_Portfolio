@@ -1,0 +1,121 @@
+
+.navigationContainer{
+    width: 60vw;
+    z-index: 100;
+    position: relative;
+}
+
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 100;
+}
+
+.mobileNav{
+    display: none;
+    z-index: 100;
+}
+
+
+.active{
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: #89CFF0;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: center;
+}
+
+.inactive{
+    transition: 0.3s ease;
+    color: hsl(0, 0%, 35%);
+    text-decoration: none;
+    text-align: center;
+    text-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ /* WEB NAVIGATION */
+.navigation li{
+    display: flex;
+    padding: 5px 5px 0px 5px;
+    max-width: 300px;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 0px 20px;
+}
+
+
+
+
+
+@media screen and (max-width: 1300px){
+
+    .navigationContainer{
+        transition: 0.4s ease;
+        width: 75vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation{
+        display: none;
+    }
+
+    .mobileNav{
+        width: 100%;
+        transition: 0.4s ease;
+        margin: 10px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0px;
+        top: -35px;
+        width: 40px;
+        height: 40px;
+        z-index: 100;
+    }
+
+    .menuBar{
+        width: 35px;
+        height: 35px;
+        z-index: 1000;
+        position: relative;
+        right: 10px;
+    }
+
+    .menuBar:hover{
+        transition: 0.4s ease;
+        color: #89CFF0;
+        cursor: pointer;
+        font-weight: bolder;
+        z-index: 100;
+    }
+}
+
+@media screen and (max-width: 1300px){
+    .navigationContainer{
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .navigationContainer{
+        width: 30vw;
+    }
+}
+

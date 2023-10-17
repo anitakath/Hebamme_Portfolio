@@ -1,0 +1,47 @@
+
+
+.footerContainer{
+    height: 7.5vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:  rgba(225,166,173, 0.8);
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+}
+
+.footerInformation{
+    margin: 20px;
+}
+
+
+.dataprivacyLink{
+    color: #89CFF0;
+    text-decoration: none;
+    margin: 10px;
+    position: relative;
+    top: 1px;
+    width: 100%;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+}
+
+
+
+
+@media screen and (max-width: 800px){
+    .footerContainer{
+        transition: 0.4s ease;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    
+    .dataprivacyLink{
+        font-size: 0.9rem;
+    }
+}

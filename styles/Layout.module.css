@@ -1,0 +1,17 @@
+
+
+.layout{
+    height: 100vh;
+    position: relative;
+   
+}
+
+.layoutChildren{
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    left: -10px;
+    padding: 0px 10px;
+    overflow: scroll;
+
+}

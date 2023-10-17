@@ -1,0 +1,20 @@
+
+
+.imageContainer{
+
+    height: 70vh;
+    overflow: hidden;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+
+
+.image{
+    width: 100vw;
+    height: 100vh;
+    transition: 0.2s ease;
+    object-fit: cover;
+}
