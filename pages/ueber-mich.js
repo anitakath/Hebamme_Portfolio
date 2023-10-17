@@ -1,5 +1,5 @@
 
-import Layout from "@/components/Layout"
+import Layout from "../components/Layout";
 //import { getServerSideProps } from "next";
 
 //STYLES
@@ -36,6 +36,8 @@ export const getServerSideProps = async () =>{
 
 const AboutMe = ({people}) =>{
 
+  console.log(people)
+
 
 
     return (
@@ -45,9 +47,7 @@ const AboutMe = ({people}) =>{
             <div className={styles.aboutMeTextWrapper}>
               <div
                 className={styles.aboutMeTextContainer}
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="500"
+              
               >
                 <h1> Meine Hebammenarbeit </h1>
                 <p className={styles.paragraph}>
@@ -77,9 +77,7 @@ const AboutMe = ({people}) =>{
               </div>
               <div
                 className={styles.aboutMeTextContainer}
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="1000"
+                
               >
                 <h1> Mein Werdegang </h1>
                 <p className={styles.paragraph}>
