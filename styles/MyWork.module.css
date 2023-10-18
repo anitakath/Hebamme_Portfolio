@@ -1,6 +1,6 @@
 .sectionContainer{
     background-color:  rgba(225,166,173, 0.4);
-    border: 2px solid rgba(225,166,173, 0.4);
+    border: 1px solid rgba(225,166,173, 0.4);
 
 }
 
@@ -108,6 +108,7 @@
 }
 
 .contactLink{
+    width: 100%;
     color: #89CFF0;
     text-decoration: none;
     font-size: 1.5rem;
@@ -115,6 +116,7 @@
     margin-bottom: 20px;
     transition: 0.5s ease;
     margin-top: 10px;
+    margin-left: 80px;
 }
 
 .contactLink:hover{

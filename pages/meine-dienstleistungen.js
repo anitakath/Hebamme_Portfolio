@@ -191,14 +191,14 @@ const MyWork = () =>{
               data-aos-duration="2000"
             >
               <p className={styles.contactLinkInfo}>
-                {" "}
+                
                 Ich freue mich, ein Teil dieses großen Abenteuers sein zu
-                dürfen! <br />
+                dürfen!
                 Zögere nicht, mich zu kontaktieren, um weitere Informationen zu
                 erhalten.
               </p>
               <Link href="/kontakt" className={styles.contactLink}>
-                Zum Kontaktformular{" "}
+                Zum Kontaktformular
               </Link>
             </div>
           </div>
