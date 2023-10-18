@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from "@formspree/react";
-
+import { useState, useEffect } from "react";
 
 //COMPONENTS
 import Layout from "@/components/Layout";
@@ -12,13 +12,31 @@ import '../styles/Input.css'
 
 
 const Contact = () => {
-  const submitFormHandler = () => {};
+
+  const [formComplete, setFormComplete] = useState(false)
+
+  const submitFormHandler = () => {
+    console.log('submitting')
+    setFormComplete(true)
+
+    if(setFormComplete){
+      handleSubmit();
+    }
+  };
+
+
+  console.log(formComplete)
 
   const [state, handleSubmit] = useForm("....")
 
   if(state.succeeded){
     return <p> thanks for your deubmission!</p>
   }
+
+
+  /*
+  action = "https://formspree.io/f/myyqgqrr";
+  method = "POST";*/
 
   return (
     <div>
@@ -32,7 +50,12 @@ const Contact = () => {
               Erfahre mehr unter
             </p>
 
-            <form onSubmit={handleSubmit} className={styles.formContainer}>
+            <form
+              onSubmit={submitFormHandler}
+              className={styles.formContainer}
+              action="https://formspree.io/f/myyqgqrr"
+              method="POST"
+            >
               <label htmlFor="fName"> Vorname* </label>
               <input
                 type="text"
