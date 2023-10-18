@@ -20,16 +20,16 @@ const Navigation = () => {
     <nav className={styles.navigationContainer}>
       <ul className={styles.navigation}>
         <li>
-          <NavLink href="/ueber-mich">Über mich</NavLink>
+          <NavLink href="/ueber-mich">ÜBER MICH</NavLink>
         </li>
         <li>
-          <NavLink href="/meine-dienstleistungen">Meine Dienstleistungen</NavLink>
+          <NavLink href="/meine-dienstleistungen">MEINE DIENSTLEISTUNGEN</NavLink>
         </li>
         <li>
-          <NavLink href="/kontakt">Kontakt</NavLink>
+          <NavLink href="/kontakt">KONTAKT</NavLink>
         </li>
         <li>
-          <NavLink href="/">Startseite</NavLink>
+          <NavLink href="/">STARTSEITE</NavLink>
         </li>
       </ul>
 

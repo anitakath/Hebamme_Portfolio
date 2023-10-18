@@ -1,0 +1,130 @@
+
+
+.sectionContainer{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid white;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    background-color:  rgba(225,166,173, 0.4);
+}
+
+.aboutDataprivacyContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 12vh;
+    padding: 10px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+
+
+
+
+.aboutDataprivacyContainer h1 {
+    color: silver;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+
+.dataprivacyInfo{
+    height: 100vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    overflow-y: scroll;
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+}
+
+
+
+
+.dataprivacyInfo p{
+    color: black;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    line-height: 40px;
+    text-align: justify;
+    
+}
+
+
+
+
+
+
+@media screen and (max-width: 800px){
+
+    .aboutDataprivacyContainer{
+        transition: 0.4s ease;
+        background-position: -200px;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .dataprivacyInfo{
+        width: 90%;
+
+    }
+}
+
+@media screen and (max-width: 600px){
+    .dataprivacyInfo h3{
+        text-align: left;
+        line-height: 19px;
+     
+    }
+
+    .dataprivacyInfo p{
+        text-align: left;
+        line-height: 30px;
+        
+    }
+}
+
+@media screen and (max-width: 400px){
+
+    .aboutDataprivacyContainer{
+        transition: 0.4s ease;
+        width: 90vw;
+        
+    }
+
+    .aboutDataprivacyContainer h1{
+        font-size: 1.1rem;
+        
+        
+    }
+
+    .aboutDataprivacyContainer p{
+        font-size: 0.7rem;
+        
+       
+    }
+
+    .aboutDataprivacyContainer h3{
+        font-size: 0.8rem;
+        margin-bottom: 40px;
+        
+     
+    }
+}

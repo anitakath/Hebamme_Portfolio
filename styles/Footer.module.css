@@ -1,18 +1,16 @@
 
 
 .footerContainer{
-    height: 8vh;
+    height: 7.4vh;
     padding: 10px;
     display: flex;
-   justify-content: center;
-   
+    justify-content: center;
     align-items: center;
     text-align: center;
-    background-color:  rgba(225,166,173, 0.8);
+    background-color:  rgba(225,166,173, 0.6);
     position: absolute;
     width: 100vw;
     bottom: 0;
-    
 }
 
 .footerContainer p{
