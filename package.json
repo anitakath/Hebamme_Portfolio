@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-validator": "^7.0.1",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18"
