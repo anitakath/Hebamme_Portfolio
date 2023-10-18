@@ -1,6 +1,8 @@
 .sectionContainer{
     background-color:  rgba(225,166,173, 0.4);
     border: 1px solid rgba(225,166,173, 0.4);
+    position: relative;
+    top: -8px;
 
 }
 

@@ -1,7 +1,7 @@
 
 
 .footerContainer{
-    height: 7.4vh;
+    height: 10vh;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -11,6 +11,7 @@
     width: 100vw;
     position: relative;
     left: -20px;
+    top: -8px;
 }
 
 

@@ -9,6 +9,8 @@
     display: flex;
     justify-content: center;
     background-color:  rgba(225,166,173, 0.4);
+    position: relative;
+    top: -8px;
 }
 
 .aboutDataprivacyContainer{
