@@ -1,6 +1,12 @@
 import { useForm, ValidationError } from "@formspree/react";
 
+
+//COMPONENTS
 import Layout from "@/components/Layout";
+
+//STYLES
+import styles from '../styles/Contact.module.css'
+import '../styles/Input.css'
 
 
 
@@ -17,104 +23,125 @@ const Contact = () => {
   return (
     <div>
       <Layout>
-        <h1>Contact</h1>
-        
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="fName"> Vorname* </label>
-          <input
-            type="text"
-            name="fName"
-            id="fName"
-            placeholder="vorname"
-          ></input>
+        <div className={styles.sectionContainer}>
+          <div className={styles.contactContainer}>
+            <h1>Kontaktiere mich</h1>
+            <p>
+              Deine Daten werde ich nur für die von dir gewünschten Wünsche
+              nutzen und zu keinem Zeitpunkt an Dritte übermitteln. <br />
+              Erfahre mehr unter
+            </p>
 
-          <label htmlFor="lName"> Nachname* </label>
-          <input
-            type="text"
-            name="lName"
-            id="lName"
-            placeholder="nachname"
-          ></input>
+            <form onSubmit={handleSubmit} className={styles.formContainer}>
+              <label htmlFor="fName"> Vorname* </label>
+              <input
+                type="text"
+                name="fName"
+                id="fName"
+                placeholder="vorname"
+                className="input"
+                required
+              ></input>
 
-          <label htmlFor="user"> Adresse & Hausnummer* </label>
-          <input
-            type="text"
-            id="user"
-            name="adress"
-            placeholder="adresse und hausnummer"
-            required
-          ></input>
+              <label htmlFor="lName"> Nachname* </label>
+              <input
+                type="text"
+                name="lName"
+                id="lName"
+                placeholder="nachname"
+                className="input"
+                required
+              ></input>
 
-          <label htmlFor="user"> Postleitzahl* </label>
-          <input
-            type="number"
-            id="user"
-            name="postal"
-            placeholder="postleitzahl"
-            required
-          ></input>
+              <label htmlFor="user"> Adresse & Hausnummer* </label>
+              <input
+                type="text"
+                id="user"
+                name="adress"
+                placeholder="adresse und hausnummer"
+                className="input"
+                required
+              ></input>
 
-          <label htmlFor="user"> Telefon* </label>
-          <input
-            type="tel"
-            id="user"
-            name="tel"
-            placeholder="telefon"
-            required
-          ></input>
+              <label htmlFor="user"> Postleitzahl* </label>
+              <input
+                type="number"
+                id="user"
+                name="postal"
+                placeholder="postleitzahl"
+                className="input"
+                required
+              ></input>
 
-          <label htmlFor="user"> Email* </label>
-          <input
-            type="email"
-            id="user"
-            name="email"
-            placeholder="email"
-            required
-          ></input>
+              <label htmlFor="user"> Telefon* </label>
+              <input
+                type="tel"
+                id="user"
+                name="tel"
+                placeholder="telefon"
+                className="input"
+                required
+              ></input>
 
-          <label htmlFor="user"> errechneter Entbindungstermin* </label>
-          <input
-            type="date"
-            id="datepicker"
-            name="birth"
-            placeholder="errechneter Entbindungstermin"
-            required
-          />
+              <label htmlFor="user"> Email* </label>
+              <input
+                type="email"
+                id="user"
+                name="email"
+                placeholder="email"
+                className="input"
+                required
+              ></input>
 
-          <label htmlFor="user"> Krankenkasse* </label>
-          <input
-            type="text"
-            id="user"
-            name="insurance"
-            required
-            placeholder="krankenkasse"
-          ></input>
+              <label htmlFor="user"> errechneter Entbindungstermin* </label>
+              <input
+                type="date"
+                id="datepicker"
+                name="birth"
+                placeholder="errechneter Entbindungstermin"
+                className="input"
+                required
+              />
 
-          <label htmlFor="user">
-            {" "}
-            schreibe mir gern weitere Anliegen / Fragen{" "}
-          </label>
-          <textarea
-            id="user"
-            name="message"
-            placeholder="schreibe mir gern weitere anliegen / fragen"
-          ></textarea>
+              <label htmlFor="user"> Krankenkasse* </label>
+              <input
+                type="text"
+                id="user"
+                name="insurance"
+                required
+                placeholder="krankenkasse"
+                className="input"
+              ></input>
 
-          <label htmlFor="user"> </label>
+              <label htmlFor="user">
+                {" "}
+                schreibe mir gern weitere Anliegen / Fragen{" "}
+              </label>
+              <textarea
+                id="user"
+                name="message"
+                placeholder="schreibe mir gern weitere anliegen / fragen"
+                className="input"
+              ></textarea>
 
-          <div>
-            <input type="checkbox"></input> ja, ich habe den Datenschutzhinweis
-            gelesen und akzeptiere die dortigen Bedingungen.
+              <label htmlFor="user"> </label>
+
+              <div>
+                <input type="checkbox"></input> jaaa, ich habe den
+                Datenschutzhinweis gelesen und akzeptiere die dortigen
+                Bedingungen.
+              </div>
+
+              <button type="submit">sende deine Anfrage</button>
+
+              <p>
+                bitte fülle alle Felder mit den Sternchen unbedingt aus und
+                akzeptiere die Datenschutzhinweise, ehe du die Kontaktanfrage
+                abschickst
+              </p>
+            </form>
           </div>
-
-          <button type="submit">sende deine Anfrage</button>
-
-          <p>
-            bitte fülle alle Felder mit den Sternchen unbedingt aus und
-            akzeptiere die Datenschutzhinweise, ehe du die Kontaktanfrage
-            abschickst
-          </p>
-        </form>
+        </div>
       </Layout>
     </div>
   );

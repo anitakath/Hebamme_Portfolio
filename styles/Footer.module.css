@@ -1,17 +1,22 @@
 
 
 .footerContainer{
-    height: 7.5vh;
+    height: 8vh;
     padding: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+   justify-content: center;
+   
     align-items: center;
     text-align: center;
     background-color:  rgba(225,166,173, 0.8);
     position: absolute;
     width: 100vw;
     bottom: 0;
+    
+}
+
+.footerContainer p{
+   
 }
 
 .footerInformation{
@@ -22,10 +27,6 @@
 .dataprivacyLink{
     color: #89CFF0;
     text-decoration: none;
-    margin: 10px;
-    position: relative;
-    top: 1px;
-    width: 100%;
     font-size: clamp(1rem, 3vw, 1.3rem);
 }
 

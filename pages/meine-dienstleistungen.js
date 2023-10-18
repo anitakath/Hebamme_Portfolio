@@ -11,10 +11,10 @@ import styles from '../styles/MyWork.module.css'
 
 //IMAGES
 //IMAGES 
-import SVI from '../components/Foto-1.jpg'
-import SVII from '../components/P7170066.jpg'
-import SV from '../components/IMG_3628.jpg'
-import WB from '../components/IMG_3675.jpg'
+import SVI from '../components/Images/Foto-1.jpg'
+import SVII from "../components/Images/P7170066.jpg";
+import SV from "../components/Images/IMG_3628.jpg";
+import WB from "../components/Images/IMG_3675.jpg";
 import Image from "next/image";
 
 const MyWork = () =>{
