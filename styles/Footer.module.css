@@ -8,9 +8,7 @@
     align-items: center;
     text-align: center;
     background-color:  rgba(225,166,173, 0.6);
-    position: absolute;
     width: 100vw;
-    bottom: 0;
 }
 
 .footerContainer p{

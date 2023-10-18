@@ -4,6 +4,10 @@ import Layout from "../components/Layout";
 
 //STYLES
 import styles from '../styles/aboutme.module.css'
+
+//IMAGES
+import Image from "next/image";
+import aboutMeImg from '../components/Images/aboutMeImg.jpg'
 /*
 export const getServerSideProps = async () =>{
   try {
@@ -44,10 +48,7 @@ const AboutMe = () =>{
         <div className={styles.sectionContainer}>
           <div className={styles.aboutMeContainer}>
             <div className={styles.aboutMeTextWrapper}>
-              <div
-                className={styles.aboutMeTextContainer}
-              
-              >
+              <div className={styles.aboutMeTextContainer}>
                 <h1> Meine Hebammenarbeit </h1>
                 <p className={styles.paragraph}>
                   Mein Fokus als Hebamme liegt auf der Betreuung während der
@@ -74,10 +75,7 @@ const AboutMe = () =>{
                   Gerne spreche ich mir Dir Italienisch oder Spanisch.
                 </p>
               </div>
-              <div
-                className={styles.aboutMeTextContainer}
-                
-              >
+              <div className={styles.aboutMeTextContainer}>
                 <h1> Mein Werdegang </h1>
                 <p className={styles.paragraph}>
                   2018 habe ich meine einjährige Dia Doula Ausbildung in Graz
@@ -107,7 +105,7 @@ const AboutMe = () =>{
             </div>
 
             <div className={styles.aboutMeImgWrapper}>
-              
+              <Image src={aboutMeImg} className={styles.aboutMeImg} />
             </div>
           </div>
         </div>
