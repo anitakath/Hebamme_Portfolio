@@ -9,7 +9,7 @@ import '../styles/Navigation.css'
 
 function NavLink({ href, children }) {
   const router = useRouter();
-  console.log(router)
+ 
 
   // Überprüfe, ob der aktuelle Pfad mit dem href übereinstimmt
   const isActive = router.pathname === href;
@@ -17,7 +17,7 @@ function NavLink({ href, children }) {
   // Weise eine andere Klasse basierend auf isActive zu
   const className = isActive ? "active" : "inactive";
 
-  console.log(className)
+ 
 
   return (
     <Link href={href} className={className}>

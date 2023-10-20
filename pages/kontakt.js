@@ -8,35 +8,203 @@ import Layout from "@/components/Layout";
 import styles from '../styles/Contact.module.css'
 import '../styles/Input.css'
 
+//HOOKS
+import useInput from "@/hooks/use-input";
+
 
 
 
 const Contact = () => {
 
-  const [formComplete, setFormComplete] = useState(false)
+   // ---------------------------- USE INPUT
+   const {
+     value: enteredFirstName,
+     changeValueHandler: firstNameChangeHandler,
+     inputBlurHandler: firstNameBlurHandler,
+     valueIsValid: firstNameIsValid,
+     style: fNameStyle,
+   } = useInput((value) => value.trim() !== "" && value.length >= 2);
 
-  const submitFormHandler = () => {
-    console.log('submitting')
-    setFormComplete(true)
+   const {
+     value: enteredLastName,
+     changeValueHandler: lastNameChangeHandler,
+     inputBlurHandler: lastNameBlurHandler,
+     valueIsValid: lastNameIsValid,
+     style: lNameStyle,
+   } = useInput((value) => value.trim() !== "" && value.length >= 2);
 
-    if(setFormComplete){
-      handleSubmit();
-    }
+   const {
+     value: enteredAdress,
+     changeValueHandler: adressChangeHandler,
+     inputBlurHandler: adressBlurHandler,
+     valueIsValid: adressIsValid,
+     style: adressStyle,
+   } = useInput((value) => value.trim() !== "" && value.length >= 4);
+
+   const {
+     value: enteredPostal,
+     changeValueHandler: postalChangeHandler,
+     inputBlurHandler: postalBlurHandler,
+     style: postalStyle,
+   } = useInput((value) => value !== NaN && value.length === 5);
+
+   const {
+     value: enteredTel,
+     changeValueHandler: telChangeHandler,
+     inputBlurHandler: telBlurHandler,
+     valueIsValid: telIsValid,
+     style: telStyle,
+   } = useInput((value) => value.length >= 6 && value.length <= 15);
+
+
+  const {
+    value: enteredEmail,
+    changeValueHandler: emailChangeHandler,
+    inputBlurHandler: emailBlurHandler,
+    valueIsValid: emailIsValid,
+    style: emailStyle,
+  } = useInput((value) => {
+    return String(value)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  });
+
+  let date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let nextYear = date.getFullYear() + 1;
+
+  if (day < 10) {
+    day = "0" + day;
+  }
+
+  if (month < 10) {
+    month = "0" + month;
+  }
+
+  const currentDate = `${year}-${month}-${day}`;
+
+  const maxDate = `${nextYear}-${month}-${day}`;
+
+  const {
+    value: enteredBirth,
+    changeValueHandler: birthChangeHandler,
+    inputBlurHandler: birthBlurHandler,
+    style: birthStyle,
+  } = useInput((value) => value >= currentDate && value <= maxDate);
+
+  /* value === $( "#datepicker" ).datepicker( "option", "dateFormat",'yy-mm-dd') */
+
+  const {
+    value: enteredInsurance,
+    changeValueHandler: insuranceChangeHandler,
+    inputBlurHandler: insuranceBlurHandler,
+    valueIsValid: insuranceIsValid,
+    style: insuranceStyle,
+  } = useInput((value) => value.trim() !== "" && value.length >= 2);
+
+  const {
+    value: enteredMessage,
+    changeValueHandler: messageChangeHandler,
+    inputBlurHandler: messageBlurHandler,
+  } = useInput((value) => value.trim() !== "");
+
+
+
+
+
+
+
+  const [checkboxCheck, setCheckboxCheck] = useState(false);
+
+  console.log(checkboxCheck)
+
+  const checkboxHandler = () => {
+    setCheckboxCheck((x) => !x);
   };
 
 
-  console.log(formComplete)
+   const [formComplete, setFormComplete] = useState(false);
 
-  const [state, handleSubmit] = useForm("....")
 
-  if(state.succeeded){
-    return <p> thanks for your deubmission!</p>
+
+  useEffect(() => {
+    if (
+      checkboxCheck === true &&
+      firstNameIsValid &&
+      lastNameIsValid &&
+      adressIsValid &&
+      enteredPostal &&
+      telIsValid &&
+      emailIsValid &&
+      insuranceIsValid
+    ) {
+      setFormComplete(true);
+    } else {
+      setFormComplete(false);
+    }
+  }, [
+    checkboxCheck,
+    firstNameIsValid,
+    lastNameIsValid,
+    adressIsValid,
+    enteredPostal,
+    emailIsValid,
+    telIsValid,
+    insuranceIsValid,
+  ]);
+
+
+
+
+
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+
+    const formData={
+      vorname: enteredFirstName,
+      nachname: enteredLastName,
+      adresse: enteredAdress,
+      postleitzahl: enteredPostal,
+      telefonnummer: enteredTel,
+      email: enteredEmail,
+      geburtstermin: enteredBirth,
+      versicherung: enteredInsurance,
+      nachricht: enteredMessage,
+      datenschutz: checkboxCheck
+    }
+
+  
+
+    try {
+      // Senden des Vornamens an die Backend-API
+      const response = await fetch('/api/validate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      console.log(data); // Erfolgsnachricht von der API
+    } catch (error) {
+      console.error(error); // Fehlermeldung bei einem Fehler in der API
+    }
   }
+  
+ 
 
 
   /*
   action = "https://formspree.io/f/myyqgqrr";
   method = "POST";*/
+  
 
   return (
     <div>
@@ -50,12 +218,9 @@ const Contact = () => {
               Erfahre mehr unter
             </p>
 
-            <form
-              onSubmit={submitFormHandler}
-              className={styles.formContainer}
-              action="https://formspree.io/f/myyqgqrr"
-              method="POST"
-            >
+            
+
+            <form onSubmit={submitHandler} className={styles.formContainer}>
               <label htmlFor="fName"> Vorname* </label>
               <input
                 type="text"
@@ -63,6 +228,8 @@ const Contact = () => {
                 id="fName"
                 placeholder="vorname"
                 className="input"
+                value={enteredFirstName}
+                onChange={firstNameChangeHandler}
                 required
               ></input>
 
@@ -73,6 +240,8 @@ const Contact = () => {
                 id="lName"
                 placeholder="nachname"
                 className="input"
+                value={enteredLastName}
+                onChange={lastNameChangeHandler}
                 required
               ></input>
 
@@ -83,6 +252,9 @@ const Contact = () => {
                 name="adress"
                 placeholder="adresse und hausnummer"
                 className="input"
+                value={enteredAdress}
+                onBlur={adressBlurHandler}
+                onChange={adressChangeHandler}
                 required
               ></input>
 
@@ -93,6 +265,9 @@ const Contact = () => {
                 name="postal"
                 placeholder="postleitzahl"
                 className="input"
+                value={enteredPostal}
+                onChange={postalChangeHandler}
+                onBlur={postalBlurHandler}
                 required
               ></input>
 
@@ -103,6 +278,9 @@ const Contact = () => {
                 name="tel"
                 placeholder="telefon"
                 className="input"
+                value={enteredTel}
+                onChange={telChangeHandler}
+                onBlur={telBlurHandler}
                 required
               ></input>
 
@@ -113,6 +291,9 @@ const Contact = () => {
                 name="email"
                 placeholder="email"
                 className="input"
+                value={enteredEmail}
+                onChange={emailChangeHandler}
+                onBlur={emailBlurHandler}
                 required
               ></input>
 
@@ -123,6 +304,9 @@ const Contact = () => {
                 name="birth"
                 placeholder="errechneter Entbindungstermin"
                 className="input"
+                value={enteredBirth}
+                onChange={birthChangeHandler}
+                onBlur={birthBlurHandler}
                 required
               />
 
@@ -132,6 +316,9 @@ const Contact = () => {
                 id="user"
                 name="insurance"
                 required
+                value={enteredInsurance}
+                onChange={insuranceChangeHandler}
+                onBlur={insuranceBlurHandler}
                 placeholder="krankenkasse"
                 className="input"
               ></input>
@@ -150,18 +337,20 @@ const Contact = () => {
               <label htmlFor="user"> </label>
 
               <div>
-                <input type="checkbox"></input> jaaa, ich habe den
-                Datenschutzhinweis gelesen und akzeptiere die dortigen
-                Bedingungen.
+                <input type="checkbox" onClick={checkboxHandler}></input> ja,
+                ich habe den Datenschutzhinweis gelesen und akzeptiere die
+                dortigen Bedingungen.
               </div>
 
               <button type="submit">sende deine Anfrage</button>
 
-              <p>
-                bitte fülle alle Felder mit den Sternchen unbedingt aus und
-                akzeptiere die Datenschutzhinweise, ehe du die Kontaktanfrage
-                abschickst
-              </p>
+              {!formComplete && (
+                <p className={styles.formInfos}>
+                  bitte fülle alle Felder mit den Sternchen unbedingt aus und
+                  akzeptiere die Datenschutzhinweise, ehe du die Kontaktanfrage
+                  abschickst
+                </p>
+              )}
             </form>
           </div>
         </div>
