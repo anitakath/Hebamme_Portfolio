@@ -7,8 +7,7 @@ const { body, validationResult } = require("express-validator");
 
 app.use(
   cors({
-    // origin: "https://admirable-queijadas-f1b25d.netlify.app", // Die URL deines React-Projekts
-    origin: "http://localhost:3000",
+    origin: "https://benevolent-souffle-cc02a4.netlify.app/", // Die URL deines React-Projekts
   })
 );
 app.use(express.json());
@@ -30,37 +29,95 @@ export default function handler(req, res){
       datenschutz,
     } = req.body;
 
-    if (!vorname || vorname.length > 99 || vorname.length < 3) {
+    // Validierungsregeln definieren
+    /*
+    const validationRules = [
+      body("vorname")
+        .isLength({ min: 3, max: 100 })
+        .withMessage(
+          "Einsssss Vorname muss mindestens 3 und darf maximal 100 Buchstaben haben."
+        ),
+      // Weitere Validierungsregeln für andere Felder hier hinzufügen
+    ];
+
+    // Validierung durchführen
+    Promise.all(validationRules.map((rule) => rule.run(req))).then(() => {
+      const errors = validationResult(req);
+
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+      else{
+        return res.status(200).json({message: 'MOIN'})
+      }
+
+      // Wenn die Validierung erfolgreich ist, fahre mit der weiteren Verarbeitung fort
+    });
+    */
+
+    function escape(input) {
+      // Ersetze alle < und > Zeichen durch ihre HTML-Entities
+      input = input.replace(/</g, "&lt;");
+      input = input.replace(/>/g, "&gt;");
+
+      // Weitere Bereinigungen oder Ersetzungen können hier hinzugefügt werden
+
+      return input;
+    }
+
+    escape(vorname)
+    escape(nachname)
+    escape(adresse)
+    escape(postleitzahl)
+    escape(telefonnummer)
+    escape(geburtstermin);
+    escape(email);
+    escape(versicherung);
+    escape(nachricht);
+
+    const trimVorname = vorname.trim();
+    const trimNachname = nachname.trim();
+    const trimAdresse = adresse.trim();
+    const trimPlz = postleitzahl.trim();
+    const trimTel = telefonnummer.trim();
+    const trimEmail = email.trim();
+    const trimGeburt = geburtstermin.trim();
+    const trimVersicherung = versicherung.trim();
+    const trimNachricht = nachricht.trim();
+    
+    
+    if (!trimVorname || trimVorname.length > 99 || trimVorname.length < 3) {
       return res.status(400).json({
         error:
           "ein Vorname muss mindestens 3, darf aber nur max 100 Buchstaben haben.",
       });
     }
+    
 
-    if (!nachname || nachname.length > 99 || nachname.length < 3) {
+    if (!trimNachname || trimNachname.length > 99 || trimNachname.length < 3) {
       return res.status(400).json({
         error:
           "dein Nachname muss mindestens 3, darf aber nur max 100 Buchstaben haben.",
       });
     }
 
-    if (!adresse || adresse.length > 99 || adresse.length < 4) {
+    if (!trimAdresse || trimAdresse.length > 99 || trimAdresse.length < 4) {
       return res.status(400).json({
         error:
-          "Bitte gültigen  Nachnamen deine Adresse muss mindestens 4, darf aber nur max 100 Buchstaben haben",
+          " deine Adresse muss mindestens 4, darf aber nur max 100 Buchstaben haben",
       });
     }
 
-    if (!postleitzahl || postleitzahl.length < 5 || postleitzahl.length > 5) {
+    if (!trimPlz || trimPlz.length < 5 || trimPlz.length > 5) {
       return res.status(400).json({
         error: "deine Postleitzahl muss aus 5 Ziffern bestehen",
       });
     }
 
     if (
-      !telefonnummer ||
-      telefonnummer.length < 6 ||
-      telefonnummer.length > 15
+      !trimTel ||
+      trimTel.length < 6 ||
+      trimTel.length > 15
     ) {
       return res.status(400).json({
         error:
@@ -70,16 +127,12 @@ export default function handler(req, res){
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Der RegEx für E-Mail-Adressen
 
-    if (!email ||  !emailRegex.test(email)) {
-      return res
-      .status(400)
-      .json({
+    if (!trimEmail || !emailRegex.test(trimEmail)) {
+      return res.status(400).json({
         error: "Ungültige E-Mail-Adresse",
       });
     }
 
-
-    
     const currentDate = new Date();
 
     const tomorrow = new Date();
@@ -87,7 +140,6 @@ export default function handler(req, res){
 
     const nextYear = new Date();
     nextYear.setDate(currentDate.getDate() + 365);
-
 
     const formatDate = (date) => {
       const year = date.getFullYear(); // Jahr (z.B. 2023)
@@ -111,26 +163,28 @@ export default function handler(req, res){
       return `${year}-${month}-${day}`; // Format YYY-MMM-DDD
     };
 
-    ;
-    ;
-
-
-    
-
     if (
-      !geburtstermin ||
-      geburtstermin < formatDate(tomorrow) ||
-      geburtstermin > formatDate(nextYear)
+      !trimGeburt ||
+      trimGeburt< formatDate(tomorrow) ||
+      trimGeburt > formatDate(nextYear)
     ) {
       return res.status(400).json({
-        error: ' Datum muss frühestens dem morgigen Tag und spätestens dem morgigen Tag in einem Jahr entsprechen',
+        error:
+          " Datum muss frühestens dem morgigen Tag und spätestens dem morgigen Tag in einem Jahr entsprechen",
       });
-    } 
+    }
 
-    if(!versicherung || versicherung.length < 3 || versicherung > 50){
+    if (!trimVersicherung || trimVersicherung.length < 3 || trimVersicherung > 50) {
       return res.status(400).json({
         error:
           "deine Krankenversicherung muss mindestens 3, darf aber maximal nur 100 Buchstaben haben ",
+      });
+    }
+
+    if(trimNachricht.length > 140){
+      return res.status(400).json({
+        error:
+          "deine Nachricht darf nicht mehr als 140 buchstaben enthalten. ",
       });
     }
 
@@ -139,7 +193,6 @@ export default function handler(req, res){
         error: `bitte lies meine Datenschutzerklärung und bestätige mit einem Klick, dass du diese akzeptierst.`,
       });
     }
-    
 
     return res.status(200).json({
       message: `Daten erfolgreich validiert! 
@@ -148,33 +201,6 @@ export default function handler(req, res){
   }
 }
 
-/*
-
-export default function handler(req, res){
-  if(req.method === 'POST'){
-
-    const {
-      vorname
-      /*
-      nachname, 
-      adresse, 
-      postleitzahl,
-      telefonnummer,
-      email, 
-      geburtstermin,
-      versicherung,
-      nachricht, 
-      datensicherheit
-      *//*
-    } = req.body;
-    if(!vorname){
-      return res.status(400).json({error: "Bitte Vorname"})
-    }
-
-    return res.status(200).json({message: 'Vorname erfolgreich validiert'})
-  }
-}
-*/
 
 
 
@@ -192,95 +218,9 @@ app.use(
   })
 );*/
 
-// Validierung
-/*
-const validateName = [
-  body("vorname")
-    .trim()
-    .isLength({ min: 3, max: 100 })
-    .escape()
-    .withMessage(
-      "dein Vorname muss mindestens 3, darf aber nur max 100 Buchstaben haben."
-    ),
+
+ 
   
-  body("nachname")
-    .trim()
-    .isLength({ min: 3, max: 100 })
-    .escape()
-    .withMessage(
-      "dein Nachname muss mindestens 3, darf aber nur max 100 Buchstaben haben."
-    ),
-
-  body("adresse")
-    .trim()
-    .isLength({ min: 4, max: 100 })
-    .escape()
-    .withMessage(
-      "deine Adresse muss mindestens 4, darf aber nur max 100 Buchstaben haben"
-    ),
-
-  body("postleitzahl")
-    .trim()
-    .isNumeric()
-    .isPostalCode("DE")
-    .withMessage("deine Postleitzahl muss aus 5 Ziffern bestehen")
-    .isLength({ min: 5, max: 5 }),
-
-  body("telefonnummer")
-    .trim()
-    .escape()
-    .isLength({ min: 6, max: 16 })
-    .withMessage(
-      "deine Postleitzahl muss aus mindestens 6 und maximal 16 Ziffern bestehen"
-    ),
-
-  body("email")
-    .trim()
-    .notEmpty()
-    .isEmail()
-    .normalizeEmail()
-    .withMessage("Ungültige E-Mail-Adresse"),
-
-  body("geburtstermin")
-    .notEmpty()
-    .withMessage("der Geburtstermin darf nicht fehlen")
-    .isDate()
-    .withMessage("Ungültiges Datum")
-    .custom((value) => {
-      const currentDate = new Date();
-      const tomorrow = new Date();
-      tomorrow.setDate(currentDate.getDate() + 1);
-      const nextYear = new Date();
-      nextYear.setDate(currentDate.getDate() + 365);
-      const selectedDate = new Date(value);
-
-      if (selectedDate >= tomorrow && selectedDate <= nextYear) {
-        return true;
-      }
-      throw new Error(
-        "Datum muss frühestens dem morgigen Tag und spätestens dem morgigen Tag in einem Jahr entsprechen"
-      );
-    }),
-
-  body("versicherung")
-    .trim()
-    .isLength({ min: 3, max: 100 })
-    .escape()
-    .withMessage(
-      "deine Krankenversicherung muss mindestens 3, darf aber maximal nur 100 Buchstaben haben."
-    ),
-  body("nachricht").optional().trim().isString().escape(),
-
-  
-  body("datensicherheit").custom((value) => {
-    if (value === true) {
-      return true;
-    }
-    throw new Error(
-      "bitte lies meine Datenschutzerklärung und bestätige mit einem Klick, dass du diese akzeptierst."
-    );
-  }),
-];
 
 /*
 app.get("/", (req, res) => {
@@ -295,29 +235,10 @@ app.get("/api/validate", (req, res) => {
 });
 
 
-// Definiere eine API-Route für die Validierung der Formdaten
 
-/*
-app.post("/api/validate", validateName, (req, res) => {
-  const errors = validationResult(req);
-  console.log(errors);
-  console.log(req);
-  console.log(req.body.vorname);
-
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  } else {
-    return res
-      .status(200)
-
-      .json({ message: "Objekt erfolgreich validiert und verarbeitet" });
-  }
-});
-*/
 
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);
 });
 
 
-//module.exports = app;
