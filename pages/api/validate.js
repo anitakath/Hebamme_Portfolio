@@ -7,7 +7,7 @@ const { body, validationResult } = require("express-validator");
 
 app.use(
   cors({
-    origin: "https://benevolent-souffle-cc02a4.netlify.app/", // Die URL deines React-Projekts
+    origin: "https://benevolent-souffle-cc02a4.netlify.app/kontakt", // Die URL deines React-Projekts
   })
 );
 app.use(express.json());
