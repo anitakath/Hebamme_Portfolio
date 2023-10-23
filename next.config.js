@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
 
+
+ //Target mus be serverless (next on netlify)
+
 module.exports = nextConfig
 module.exports = {
   async rewrites() {
@@ -8,11 +11,13 @@ module.exports = {
       {
         source: "/api/validate",
         destination: "/api/validate.js",
+        
+        target: "serverless",
       },
     ];
   },
   
-  //Target mus be serverless (next on netlify)
-  target: 'serverless',
+ 
+ 
 
 };
