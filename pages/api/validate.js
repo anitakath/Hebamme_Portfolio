@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(
   cors({
     // origin: "https://admirable-queijadas-f1b25d.netlify.app", // Die URL deines React-Projekts
-    origin: "http://localhost:3000",
+    origin: "https://benevolent-souffle-cc02a4.netlify.app/kontakt",
   })
 );
 app.use(express.json());
