@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+/*const nextConfig = {}
 
 
 module.exports = {
@@ -14,4 +14,11 @@ module.exports = {
   },
   target: "serverless",
 };
+*/
 
+
+// next.config.js
+module.exports = {
+  // Target must be serverless
+  target: 'serverless'
+};
