@@ -16,9 +16,17 @@ module.exports = {
 }; */
 
 // next.config.js
-
+/*
 module.exports = {
   ...nextConfig,
   // Target must be serverless
   target: "serverless",
+};*/
+
+
+module.exports = {
+  serverRuntimeConfig: {
+    // Hier kannst du deine Zielumgebung angeben
+    MY_TARGET_ENV: "production",
+  },
 };
