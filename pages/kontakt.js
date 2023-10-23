@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 //STYLES
 import styles from '../styles/Contact.module.css'
 import '../styles/Input.css'
+ import "styled-jsx/style";
 
 //HOOKS
 import useInput from "@/hooks/use-input";
@@ -180,6 +181,7 @@ const Contact = () => {
     }
 
   
+    
 
     try {
       // Senden des Vornamens an die Backend-API
