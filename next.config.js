@@ -11,4 +11,8 @@ module.exports = {
       },
     ];
   },
+  
+  //Target mus be serverless (next on netlify)
+  target: 'serverless',
+
 };
