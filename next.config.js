@@ -2,22 +2,16 @@
 const nextConfig = {}
 
 
- //Target mus be serverless (next on netlify)
-
-module.exports = nextConfig
 module.exports = {
+  ...nextConfig,
   async rewrites() {
     return [
       {
         source: "/api/validate",
         destination: "/api/validate.js",
-        
-        target: "serverless",
       },
     ];
   },
-  
- 
- 
-
+  target: "serverless",
 };
+
