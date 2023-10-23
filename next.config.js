@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
 
-
+/*
 module.exports = {
   ...nextConfig,
   async rewrites() {
@@ -13,4 +13,12 @@ module.exports = {
     ];
   },
 
-}; 
+}; */
+
+// next.config.js
+
+module.exports = {
+  ...nextConfig,
+  // Target must be serverless
+  target: "serverless",
+};

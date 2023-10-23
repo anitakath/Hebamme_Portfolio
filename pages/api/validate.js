@@ -3,11 +3,11 @@ const app = express();
 const router = express.Router();
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
-const { body, validationResult } = require("express-validator");
 
 app.use(
   cors({
-    origin: "https://benevolent-souffle-cc02a4.netlify.app/kontakt", // Die URL deines React-Projekts
+    // origin: "https://admirable-queijadas-f1b25d.netlify.app", // Die URL deines React-Projekts
+    origin: "http://localhost:3000",
   })
 );
 app.use(express.json());
@@ -29,31 +29,7 @@ export default function handler(req, res){
       datenschutz,
     } = req.body;
 
-    // Validierungsregeln definieren
-    /*
-    const validationRules = [
-      body("vorname")
-        .isLength({ min: 3, max: 100 })
-        .withMessage(
-          "Einsssss Vorname muss mindestens 3 und darf maximal 100 Buchstaben haben."
-        ),
-      // Weitere Validierungsregeln für andere Felder hier hinzufügen
-    ];
-
-    // Validierung durchführen
-    Promise.all(validationRules.map((rule) => rule.run(req))).then(() => {
-      const errors = validationResult(req);
-
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
-      else{
-        return res.status(200).json({message: 'MOIN'})
-      }
-
-      // Wenn die Validierung erfolgreich ist, fahre mit der weiteren Verarbeitung fort
-    });
-    */
+  
 
     function escape(input) {
       // Ersetze alle < und > Zeichen durch ihre HTML-Entities
@@ -207,7 +183,7 @@ export default function handler(req, res){
 
 
 // Statische Dateien bereitstellen
-/*
+
 app.use(
   express.static("public", {
     setHeaders: (res, path) => {
@@ -216,18 +192,8 @@ app.use(
       }
     },
   })
-);*/
+);
 
-
- 
-  
-
-/*
-app.get("/", (req, res) => {
-  // Hier können Sie den entsprechenden Code für die Verarbeitung der Anforderung schreiben
-  res.send("Server aktiv!");
-}); 
-*/
 
 
 app.get("/api/validate", (req, res) => {
