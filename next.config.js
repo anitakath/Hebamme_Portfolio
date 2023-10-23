@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
 
-/*
+
 module.exports = {
   ...nextConfig,
   async rewrites() {
@@ -13,7 +13,7 @@ module.exports = {
     ];
   },
 
-}; */
+}; 
 
 // next.config.js
 /*
@@ -23,10 +23,11 @@ module.exports = {
   target: "serverless",
 };*/
 
-
+/*
 module.exports = {
   serverRuntimeConfig: {
     // Hier kannst du deine Zielumgebung angeben
     MY_TARGET_ENV: "production",
   },
 };
+*/
