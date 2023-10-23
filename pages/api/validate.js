@@ -180,8 +180,6 @@ export default function handler(req, res){
 
 
 
-
-
 // Statische Dateien bereitstellen
 
 app.use(
