@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+/*const nextConfig = {}
 
 
 module.exports = {
@@ -13,5 +13,8 @@ module.exports = {
     ];
   },
 
-};
+}; */
 
+  const withNextOnNetlify = require("next-on-netlify");
+
+  module.exports = withNextOnNetlify();
