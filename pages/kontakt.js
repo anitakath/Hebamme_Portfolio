@@ -24,8 +24,11 @@ const Contact = () => {
      inputBlurHandler: firstNameBlurHandler,
      valueIsValid: firstNameIsValid,
      style: fNameStyle,
+     hasError: hasError,
    } = useInput((value) => value.trim() !== "" && value.length >= 2);
 
+  
+   
    const {
      value: enteredLastName,
      changeValueHandler: lastNameChangeHandler,
@@ -55,7 +58,10 @@ const Contact = () => {
      inputBlurHandler: telBlurHandler,
      valueIsValid: telIsValid,
      style: telStyle,
+     hasError: hasErrorTel,
    } = useInput((value) => value.length >= 6 && value.length <= 15);
+
+
 
 
   const {
@@ -121,7 +127,7 @@ const Contact = () => {
 
   const [checkboxCheck, setCheckboxCheck] = useState(false);
 
-  console.log(checkboxCheck)
+
 
   const checkboxHandler = () => {
     setCheckboxCheck((x) => !x);
@@ -202,7 +208,7 @@ const Contact = () => {
   
  
 
-
+ 
   /*
   action = "https://formspree.io/f/myyqgqrr";
   method = "POST";*/
@@ -220,8 +226,6 @@ const Contact = () => {
               Erfahre mehr unter
             </p>
 
-            
-
             <form onSubmit={submitHandler} className={styles.formContainer}>
               <label htmlFor="fName"> Vorname* </label>
               <input
@@ -229,8 +233,9 @@ const Contact = () => {
                 name="fName"
                 id="fName"
                 placeholder="vorname"
-                className="input"
+                className={fNameStyle}
                 value={enteredFirstName}
+                onBlur={firstNameBlurHandler}
                 onChange={firstNameChangeHandler}
                 required
               ></input>
@@ -241,8 +246,9 @@ const Contact = () => {
                 name="lName"
                 id="lName"
                 placeholder="nachname"
-                className="input"
+                className={lNameStyle}
                 value={enteredLastName}
+                onBlur={lastNameBlurHandler}
                 onChange={lastNameChangeHandler}
                 required
               ></input>
@@ -253,7 +259,7 @@ const Contact = () => {
                 id="user"
                 name="adress"
                 placeholder="adresse und hausnummer"
-                className="input"
+                className={adressStyle}
                 value={enteredAdress}
                 onBlur={adressBlurHandler}
                 onChange={adressChangeHandler}
@@ -266,7 +272,7 @@ const Contact = () => {
                 id="user"
                 name="postal"
                 placeholder="postleitzahl"
-                className="input"
+                className={postalStyle}
                 value={enteredPostal}
                 onChange={postalChangeHandler}
                 onBlur={postalBlurHandler}
@@ -279,7 +285,7 @@ const Contact = () => {
                 id="user"
                 name="tel"
                 placeholder="telefon"
-                className="input"
+                className={telStyle}
                 value={enteredTel}
                 onChange={telChangeHandler}
                 onBlur={telBlurHandler}
@@ -292,7 +298,7 @@ const Contact = () => {
                 id="user"
                 name="email"
                 placeholder="email"
-                className="input"
+                className={emailStyle}
                 value={enteredEmail}
                 onChange={emailChangeHandler}
                 onBlur={emailBlurHandler}
@@ -305,7 +311,7 @@ const Contact = () => {
                 id="datepicker"
                 name="birth"
                 placeholder="errechneter Entbindungstermin"
-                className="input"
+                className={birthStyle}
                 value={enteredBirth}
                 onChange={birthChangeHandler}
                 onBlur={birthBlurHandler}
@@ -322,7 +328,7 @@ const Contact = () => {
                 onChange={insuranceChangeHandler}
                 onBlur={insuranceBlurHandler}
                 placeholder="krankenkasse"
-                className="input"
+                className={insuranceStyle}
               ></input>
 
               <label htmlFor="user">

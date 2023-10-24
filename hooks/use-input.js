@@ -14,7 +14,10 @@ const useInput = (validation) => {
 
   const valueIsValid = validation(enteredValue);
 
+
+
   const hasError = !valueIsValid && isTouched;
+
 
   let style = hasError ? "error" : "input";
 
