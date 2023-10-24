@@ -105,7 +105,11 @@ const AboutMe = () =>{
             </div>
 
             <div className={styles.aboutMeImgWrapper}>
-              <Image src={aboutMeImg} className={styles.aboutMeImg} />
+              <Image
+                priority={true}
+                src={aboutMeImg}
+                className={styles.aboutMeImg}
+              />
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ const Impressum = () =>{
                     >
                       {" "}
                       brown.naeckler@gmail.com
-                    </a>q
+                    </a>
                   </p>
                   <p>
                     Ich bin Hebamme in Hamburg und der Behörde für Arbeit,

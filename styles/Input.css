@@ -1,5 +1,11 @@
 
 
+
+
+input::placeholder {
+    color: transparent;
+}
+
 .error{
     width: 100%;
     border: none;
@@ -35,3 +41,4 @@
     transition: 0.4s ease;
     font-size: 1.5rem;
 }
+

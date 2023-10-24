@@ -12,6 +12,7 @@ const HeaderImg = () =>{
           src={mobileImg}
           alt="Shaana Brown D. Näckler"
           className={styles.image}
+          priority={true}
         ></Image>
       </div>
     );
