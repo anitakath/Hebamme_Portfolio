@@ -13,6 +13,8 @@ import HeaderImg from "../components/HeaderImg";
 //STYLES
 import '../styles/App.css'
 
+
+
 const Start = () => {
   return (
     <div className="main-container">
