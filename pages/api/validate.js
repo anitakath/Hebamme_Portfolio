@@ -199,6 +199,12 @@ app.get("/api/validate", (req, res) => {
   res.send("GET-Anforderung an /api/validate erhalten");
 });
 
+export default function getHandler(req, res){
+  if(req.method === 'GET'){
+    res.send("GET-Anforderung an /api/validate erhalten");
+
+  }
+}
 
 
 
