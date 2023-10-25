@@ -214,7 +214,16 @@ const Contact = () => {
   method = "POST";*/
   
 
+  const getHandler = async () =>{
 
+    const response = await fetch('/api/validate')
+
+    const data = await response.json();
+
+    console.log(response)
+    console.log(data)
+
+  }
 
   return (
     <div>
@@ -222,7 +231,7 @@ const Contact = () => {
         <div className={styles.sectionContainer}>
           <div className={styles.contactContainer}>
             <h1>Kontaktiere mich</h1>
-            
+            <h2 onClick={getHandler}> get </h2>
             <p>
               Deine Daten werde ich nur für die von dir gewünschten Wünsche
               nutzen und zu keinem Zeitpunkt an Dritte übermitteln. <br />
