@@ -1,0 +1,96 @@
+
+/* NAVIGATION MODAL */
+
+
+
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.4s ease;
+    background-color: hsla(0, 0%, 85%, 0.6);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.navigationModal{
+    transition: 0.4s ease;
+    z-index: 100;
+    position: fixed;
+    top: 0vh;
+    left: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:  rgba(225,166,173, 1);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.navigationModal li{
+    font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+    position: relative;
+    left: -20px;
+    text-decoration: none;
+    display: flex;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    justify-content: center;
+}
+
+.inactive{
+    text-decoration: none;
+    color: hsla(0, 0%, 100%, 0.7);
+    color: black;
+}
+
+.active{
+    transition: 0.2s ease;
+    color: rgb(137,250,250);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.inactive:hover, .closeModalBtn:hover{
+    transition: 0.4s ease;
+    color: rgb(137,250,250);
+}
+
+
+
+.closeModalBtnWrapper{
+    height: 50px;
+    width: 50px;
+    font-weight: bolder;
+    border: none;
+    cursor:pointer;
+    background-color: transparent;
+    positioN: absolute;
+    top: 135px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.closeModalBtn{
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 300px){
+    .navigationModal li{
+        font-size: 1rem;
+    }
+}
+
