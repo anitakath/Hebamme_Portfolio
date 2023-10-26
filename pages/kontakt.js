@@ -233,7 +233,7 @@ const Contact = () => {
               <label htmlFor="firstName"> Vorname* </label>
               <input
                 type="text"
-                name="fName"
+                name="firstName"
                 id="firstName"
                 placeholder="vorname"
                 className={fNameStyle}
