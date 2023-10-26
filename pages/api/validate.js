@@ -1,8 +1,7 @@
 const express = require("express");
 const app = express();
-const router = express.Router();
 const PORT = process.env.PORT || 5000;
-const cors = require("cors");
+
 
 
 
@@ -14,8 +13,9 @@ app.listen(PORT, () => {
 export default function handler(req, res){
 
     if (req.method !== "POST") {
-      
+
       return res.status(405).json({ message: "Method Not Allowed" });
+
     }
 
   if(req.method === 'POST'){
@@ -23,9 +23,9 @@ export default function handler(req, res){
     const referer = req.headers.referer || req.headers.referrer;
     const allowedReferer = "https://shaana.netlify.app/kontakt";
 
-    const xxx = referer.startsWith(allowedReferer);
 
     if (referer.startsWith(allowedReferer) === true) {
+
       // POST kommt von Shaanas Website
 
       const {
@@ -42,6 +42,7 @@ export default function handler(req, res){
       } = req.body;
 
       function escape(input) {
+
         // Ersetze alle < und > Zeichen durch ihre HTML-Entities
         input = input.replace(/</g, "&lt;");
         input = input.replace(/>/g, "&gt;");
@@ -74,7 +75,7 @@ export default function handler(req, res){
       if (!trimVorname || trimVorname.length > 99 || trimVorname.length < 3) {
         return res.status(400).json({
           error:
-            "ein Vorname muss mindestens 3, darf aber nur max 100 Buchstaben haben.",
+            "dein Vorname muss mindestens 3, darf aber nur max 100 Buchstaben haben.",
         });
       }
 
@@ -92,7 +93,7 @@ export default function handler(req, res){
       if (!trimAdresse || trimAdresse.length > 99 || trimAdresse.length < 4) {
         return res.status(400).json({
           error:
-            " deine Adresse muss mindestens 4, darf aber nur max 100 Buchstaben haben",
+            "deine Adresse muss mindestens 4, darf aber nur max 100 Buchstaben haben",
         });
       }
 
@@ -183,24 +184,22 @@ export default function handler(req, res){
       }
 
       return res.status(200).json({
-        message: `Daten erfolgreich validiert! 
-      ${vorname} ${nachname} ${geburtstermin} ${adresse} ${postleitzahl} ${datenschutz} ${versicherung} ${telefonnummer}`,
+        message: 'Daten erfolgreich validiert!',
       });
 
-      res.status(200).json({ message: `${referer} ${allowedReferer} ${xxx}` });
     } else {
       // POST kommt nicht von Shaanas Website
       res.status(403).json({ error: "Unzulässige Anfrage" });
     }
   } 
 
-    /*
-  
+  /*
    if (req.method === "GET") {
      return res.status(200).json({
        message: 'GET funktioniert!'
      })
-   } */
+   } 
+  */
    
 }
 

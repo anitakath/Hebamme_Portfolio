@@ -209,9 +209,8 @@ const Contact = () => {
  
 
  
-  /*
-  action = "https://formspree.io/f/myyqgqrr";
-  method = "POST";*/
+  
+  
   
 
   const getHandler = async () =>{
@@ -238,7 +237,12 @@ const Contact = () => {
               Erfahre mehr unter
             </p>
 
-            <form onSubmit={submitHandler} className={styles.formContainer}>
+            <form 
+            onSubmit={submitHandler} 
+            className={styles.formContainer}
+            action = "https://formspree.io/f/myyqgqrr"
+            method = "POST"
+            >
               <label htmlFor="fName"> Vorname* </label>
               <input
                 type="text"
