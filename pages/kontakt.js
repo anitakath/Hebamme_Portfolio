@@ -371,9 +371,7 @@ const Contact = () => {
               />
 
               <label htmlFor="user">
-
                 schreibe mir gern weitere Anliegen / Fragen
-
               </label>
               <textarea
                 id="user"
@@ -391,10 +389,19 @@ const Contact = () => {
               <label htmlFor="user"> </label>
 
               <div>
-                <input type="checkbox" onClick={checkboxHandler}></input> ja,
-                ich habe den Datenschutzhinweis gelesen und akzeptiere die
+                <input
+                  type="checkbox"
+                  name="datenschutz"
+                  onClick={checkboxHandler}
+                ></input>{" "}
+                ja, ich habe den Datenschutzhinweis gelesen und akzeptiere die
                 dortigen Bedingungen.
               </div>
+              <ValidationError
+                prefix="datenschutz"
+                field="datenschutz"
+                errors={state.errors}
+              />
 
               <button type="submit">sende deine Anfrage</button>
 
