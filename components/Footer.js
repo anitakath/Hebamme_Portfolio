@@ -12,13 +12,13 @@ function Footer() {
       <p> © 2023 Shaana Brown Näckler | Alle Rechte vorbehalten </p>
       <div className={styles.footerInformation}>
         <Link href="/datensicherheit" className={styles.dataprivacyLink}>
-          {" "}
-          Datenschutz{" "}
-        </Link>{" "}
+         
+          Datenschutz
+        </Link>
         |
         <Link href="/impressum" className={styles.dataprivacyLink}>
-          {" "}
-          Impressum{" "}
+          
+          Impressum
         </Link>
       </div>
     </div>
