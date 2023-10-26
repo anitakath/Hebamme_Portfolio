@@ -4,29 +4,7 @@ const router = express.Router();
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 
-const whitelist = ["https://shaana.netlify.app"];
-const corsOptions = {
-  origin: function (origin, callback){
-    if(whitelist.indexOf(origin) !== -1 || !origin){
-      callback(null, true)
-    } else{
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
 
-app.use(cors(corsOptions));
-
-/*
-app.use(
-  cors({
-    // Die URL deines React-Projekts
-    origin: "shaana.netlify.app/kontakt",
-  })
-);
-*/
-app.use(express.json());
-app.use(router);
 
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);
@@ -215,8 +193,6 @@ export default function handler(req, res){
       res.status(403).json({ error: "Unzulässige Anfrage" });
     }
   } 
-   
-
 
     /*
   
@@ -231,23 +207,7 @@ export default function handler(req, res){
 
 
 
-// Statische Dateien bereitstellen
 
-app.use(
-  express.static("public", {
-    setHeaders: (res, path) => {
-      if (path.endsWith(".css")) {
-        res.setHeader("Content-Type", "text/css");
-      }
-    },
-  })
-);
-
-
-
-app.get("/api/validate", (req, res) => {
-  res.send("GET-Anforderung an /api/validate erhalten");
-});
 
 
 
