@@ -170,8 +170,8 @@ const Contact = () => {
 
 
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  const submitHandler = async () => {
+    //e.preventDefault();
 
 
     const formData={
