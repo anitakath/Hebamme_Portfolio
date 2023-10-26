@@ -166,6 +166,7 @@ const Contact = () => {
 
 
 
+   const [state, handleSubmit] = useForm("myyqgqrr");
 
 
 
@@ -185,8 +186,6 @@ const Contact = () => {
       nachricht: enteredMessage,
       datenschutz: checkboxCheck
     }
-
-  
     
 
     try {
@@ -201,28 +200,16 @@ const Contact = () => {
 
       const data = await response.json();
       console.log(data); // Erfolgsnachricht von der API
+      handleSubmit();
     } catch (error) {
       console.error(error); // Fehlermeldung bei einem Fehler in der API
     }
   }
   
- 
-
- 
   
   
   
 
-  const getHandler = async () =>{
-
-    const response = await fetch('/api/validate')
-
-    const data = await response.json();
-
-    console.log(response)
-    console.log(data)
-
-  }
 
   return (
     <div>
