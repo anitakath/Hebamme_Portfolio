@@ -217,20 +217,20 @@ const Contact = () => {
         <div className={styles.sectionContainer}>
           <div className={styles.contactContainer}>
             <h1>Kontaktiere mich</h1>
-          
+
             <p>
               Deine Daten werde ich nur für die von dir gewünschten Wünsche
               nutzen und zu keinem Zeitpunkt an Dritte übermitteln. <br />
               Erfahre mehr unter
             </p>
 
-            <form 
-            onSubmit={submitHandler} 
-            className={styles.formContainer}
-            action = "https://formspree.io/f/myyqgqrr"
-            method = "POST"
+            <form
+              onSubmit={submitHandler}
+              className={styles.formContainer}
+              action="https://formspree.io/f/myyqgqrr"
+              method="POST"
             >
-              <label htmlFor="fName"> Vorname* </label>
+              <label htmlFor="firstName"> Vorname* </label>
               <input
                 type="text"
                 name="fName"
@@ -242,11 +242,16 @@ const Contact = () => {
                 onChange={firstNameChangeHandler}
                 required
               ></input>
+              <ValidationError
+                prefix="firstName"
+                field="firstName"
+                errors={state.errors}
+              />
 
-              <label htmlFor="lName"> Nachname* </label>
+              <label htmlFor="lastName"> Nachname* </label>
               <input
                 type="text"
-                name="lName"
+                name="lastName"
                 id="lName"
                 placeholder="nachname"
                 className={lNameStyle}
@@ -255,6 +260,11 @@ const Contact = () => {
                 onChange={lastNameChangeHandler}
                 required
               ></input>
+              <ValidationError
+                prefix="lastName"
+                field="lastName"
+                errors={state.errors}
+              />
 
               <label htmlFor="user"> Adresse & Hausnummer* </label>
               <input
@@ -268,6 +278,11 @@ const Contact = () => {
                 onChange={adressChangeHandler}
                 required
               ></input>
+              <ValidationError
+                prefix="adress"
+                field="adress"
+                errors={state.errors}
+              />
 
               <label htmlFor="user"> Postleitzahl* </label>
               <input
@@ -281,6 +296,11 @@ const Contact = () => {
                 onBlur={postalBlurHandler}
                 required
               ></input>
+              <ValidationError
+                prefix="postal"
+                field="postal"
+                errors={state.errors}
+              />
 
               <label htmlFor="user"> Telefon* </label>
               <input
@@ -294,6 +314,7 @@ const Contact = () => {
                 onBlur={telBlurHandler}
                 required
               ></input>
+              <ValidationError prefix="tel" field="tel" errors={state.errors} />
 
               <label htmlFor="user"> Email* </label>
               <input
@@ -307,6 +328,11 @@ const Contact = () => {
                 onBlur={emailBlurHandler}
                 required
               ></input>
+              <ValidationError
+                prefix="email"
+                field="email"
+                errors={state.errors}
+              />
 
               <label htmlFor="user"> errechneter Entbindungstermin* </label>
               <input
@@ -319,6 +345,11 @@ const Contact = () => {
                 onChange={birthChangeHandler}
                 onBlur={birthBlurHandler}
                 required
+              />
+              <ValidationError
+                prefix="birth"
+                field="birth"
+                errors={state.errors}
               />
 
               <label htmlFor="user"> Krankenkasse* </label>
@@ -333,6 +364,11 @@ const Contact = () => {
                 placeholder="krankenkasse"
                 className={insuranceStyle}
               ></input>
+              <ValidationError
+                prefix="insurance"
+                field="insurance"
+                errors={state.errors}
+              />
 
               <label htmlFor="user">
                 {" "}
@@ -344,6 +380,11 @@ const Contact = () => {
                 placeholder="schreibe mir gern weitere anliegen / fragen"
                 className="input"
               ></textarea>
+              <ValidationError
+                prefix="message"
+                field="message"
+                errors={state.errors}
+              />
 
               <label htmlFor="user"> </label>
 
