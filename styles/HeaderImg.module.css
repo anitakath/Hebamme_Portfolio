@@ -6,7 +6,6 @@
     height: 100vh;
     z-index: 100;
     position: relative;
-    left: 5px;
     border: 1px solid rgba(225,166,173, 0.4);
     position: relative;
     top: -8px;
@@ -15,10 +14,12 @@
 
 
 .image{
-    width: 100vw;
+    width: 110vw;
     height: 100vh;
     transition: 0.2s ease;
     object-fit: cover;
     position: relative;
-    top: -8px;
+  
+
+    
 }
