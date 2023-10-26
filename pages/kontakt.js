@@ -234,7 +234,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="fName"
-                id="fName"
+                id="firstName"
                 placeholder="vorname"
                 className={fNameStyle}
                 value={enteredFirstName}
