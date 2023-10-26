@@ -233,7 +233,7 @@ const Contact = () => {
               <label htmlFor="firstName"> Vorname* </label>
               <input
                 type="text"
-                name="firstName"
+                name="vorname"
                 id="firstName"
                 placeholder="vorname"
                 className={fNameStyle}
@@ -251,7 +251,7 @@ const Contact = () => {
               <label htmlFor="lastName"> Nachname* </label>
               <input
                 type="text"
-                name="lastName"
+                name="nachname"
                 id="lName"
                 placeholder="nachname"
                 className={lNameStyle}
@@ -270,7 +270,7 @@ const Contact = () => {
               <input
                 type="text"
                 id="user"
-                name="adress"
+                name="adresse"
                 placeholder="adresse und hausnummer"
                 className={adressStyle}
                 value={enteredAdress}
@@ -288,7 +288,7 @@ const Contact = () => {
               <input
                 type="number"
                 id="user"
-                name="postal"
+                name="postleitzahl"
                 placeholder="postleitzahl"
                 className={postalStyle}
                 value={enteredPostal}
@@ -306,7 +306,7 @@ const Contact = () => {
               <input
                 type="tel"
                 id="user"
-                name="tel"
+                name="telefon"
                 placeholder="telefon"
                 className={telStyle}
                 value={enteredTel}
@@ -338,7 +338,7 @@ const Contact = () => {
               <input
                 type="date"
                 id="datepicker"
-                name="birth"
+                name="entbindungstermin"
                 placeholder="errechneter Entbindungstermin"
                 className={birthStyle}
                 value={enteredBirth}
@@ -356,7 +356,7 @@ const Contact = () => {
               <input
                 type="text"
                 id="user"
-                name="insurance"
+                name="krankenkasse"
                 required
                 value={enteredInsurance}
                 onChange={insuranceChangeHandler}
@@ -371,15 +371,17 @@ const Contact = () => {
               />
 
               <label htmlFor="user">
-                {" "}
-                schreibe mir gern weitere Anliegen / Fragen{" "}
+
+                schreibe mir gern weitere Anliegen / Fragen
+
               </label>
               <textarea
                 id="user"
-                name="message"
+                name="nachricht"
                 placeholder="schreibe mir gern weitere anliegen / fragen"
                 className="input"
               ></textarea>
+              <p>* bitte nutze maximal 140 Zeichen </p>
               <ValidationError
                 prefix="message"
                 field="message"
