@@ -1,6 +1,6 @@
 
 .navigationContainer{
-    width: 60%;
+    width: 40%;
     z-index: 100;
     position: relative;
 }
@@ -11,6 +11,7 @@
     align-items: center;
     height: 100%;
     z-index: 100;
+
 }
 
 .mobileNav{
@@ -31,6 +32,8 @@
 
 
  /* WEB NAVIGATION */
+
+ 
 .navigation li{
     display: flex;
     padding: 5px 5px 0px 5px;
@@ -48,7 +51,6 @@
 
     .navigationContainer{
         transition: 0.4s ease;
-        width: 75vw;
         display: flex;
         justify-content: center;
     }
@@ -83,22 +85,12 @@
 
     .menuBar:hover{
         transition: 0.4s ease;
-        color: #89CFF0;
+        color: #7392B7;
         cursor: pointer;
         font-weight: bolder;
         z-index: 100;
     }
 }
 
-@media screen and (max-width: 1300px){
-    .navigationContainer{
-        width: 50vw;
-    }
-}
 
-@media screen and (max-width: 1000px){
-    .navigationContainer{
-        width: 30vw;
-    }
-}
 

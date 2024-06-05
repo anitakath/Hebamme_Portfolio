@@ -1,51 +1,35 @@
+
+.container{
+    display: flex;
+    width: 100%;
+}
+
 .sectionContainer{
     margin: 0;
     padding: 0;
     border-top: 1px solid white;
-    background-color:  rgba(225,166,173, 0.4);
+    background-color:  rgba(225,166,173, 0.2);
     border: 1px solid rgba(225,166,173, 0.4);
-    position: relative;
-    top: -8px;
-}
+    width: 60%;
 
-
-.aboutMeContainer{
-    display: flex;
-    width: 100vw;
-    margin-top: 12vh;
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    position: relative;
-}
-
-
-
-.aboutMeTextWrapper{
-    height: 100%;
-    width: 60vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    overflow: auto;
     
 }
 
-.aboutMeTextWrapper h1{
-    font-size: clamp(1.8rem, 2.6vw, 2rem);
-    color: #89CFF0;
-    
+.aboutMeTextContainer{
+    width: 50vw;
+    margin: 5px;
 }
 
-
-
-
+.aboutMeTextContainer h1{
+    color: #7392B7;
+}
 
 
 .aboutMeImgWrapper{
     width: 50%;
-    margin: 0 10px;
     position: relative;
     transition: 0.2s ease;
 }
@@ -60,17 +44,9 @@
 
 
 
-.aboutMeTextContainer{
-    padding: 10px;
-    width: 50vw;
-    margin-bottom: 50px;
-    
-}
-
-
-.aboutMeTextContainer p{
+.paragraph{
     line-height: 30px;
-    margin: 40px 20px 40px 0px;
+    margin: 40px 0px;
     text-align:justify;
     text-justify: inter-word;
     -webkit-hyphens: auto;
@@ -79,116 +55,24 @@
 }
 
 
-
-
-
-
-
-@media screen and (max-width: 1750px){
-    
-    .aboutMeImg{
-        height: 1100px;
-    }
-}
-
-
-
-
-@media screen and (max-width: 1600px){
-
-    .aboutMeContainer{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+@media screen and (max-width: 1200px){
+    .sectionContainer{
         width: 100vw;
-     
-    }
-
-    .aboutMeTextWrapper{
-        width: 100vw;
-        position: relative;
-        left: 5px;
     }
 
     .aboutMeTextContainer{
         width: 90%;
     }
 
-   
-    
-}
-
-
-@media screen and (max-width: 1400px){
-    
-    
     .aboutMeImgWrapper{
-        width: 60%;
-        margin: 0px;
+        display: none;
     }
-
-    .aboutMeImg{
-        height: 950px;
-    }
-    
-
-}
-
-@media screen and (max-width: 1200px){
-
-    .aboutMeImgWrapper{
-        width: 70%;
-        
-    }
-
-    .aboutMeImg{
-        height: 900px;
-    }
-
-   
     
 }
 
-
-@media screen and (max-width: 800px){
-
-    .aboutMeImgWrapper{
-        width: 90%;
-    }
-
-
-}
-
-
-@media screen and (max-width: 650px){
-  
-    .aboutMeImg{
-        height: 700px;
-    }
-    
-    .aboutMeTextContainer p{
-        text-align: left;
-       
-    } 
-}
-
-@media screen and (max-width: 450px){
-    
-    .aboutMeImg{
-        height: 500px;
-    }
-
-   
-
-    
-}
-
-
-
-@media screen and (max-width: 300px){
-
-    .aboutMeImg{
-        height: 55vh;
+@media screen and (max-width: 600px){
+     .aboutMeTextContainer{
+        width: 95%;
     }
 }
 

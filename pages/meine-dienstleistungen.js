@@ -11,10 +11,10 @@ import styles from '../styles/MyWork.module.css'
 
 //IMAGES
 //IMAGES 
-import SVI from '../components/Images/Foto-1.jpg'
-import SVII from "../components/Images/P7170066.jpg";
-import SV from "../components/Images/IMG_3628.jpg";
-import WB from "../components/Images/IMG_3675.jpg";
+import firstImg from '../components/Images/abc.jpg'
+import secondImg from "../components/Images/def.jpg";
+import thirdImg from "../components/Images/ghi.jpg";
+import fourthImg from "../components/Images/jkl.jpg";
 import Image from "next/image";
 
 const MyWork = () =>{
@@ -81,7 +81,7 @@ const MyWork = () =>{
                 </div>
                 <div className={styles.imgContainer}>
                   <Image
-                    src={SVI}
+                    src={firstImg}
                     className={styles.firstImage}
                     alt="something"
                     aria-label="something"
@@ -96,7 +96,7 @@ const MyWork = () =>{
               <div className={styles.fieldB}>
                 <div className={styles.imgContainer}>
                   <Image
-                    src={SVII}
+                    src={secondImg}
                     className={styles.secondImage}
                     alt="something"
                     aria-label="something"
@@ -155,7 +155,7 @@ const MyWork = () =>{
                     <li> Rückbildungsgymnastik </li>
                     <li> Verhütung </li>
                     <li>
-                      {" "}
+                    
                       und viele weitere Beratungsthemen, die fließend in die
                       Zeit nach dem Wochenbett übergehen, wie zum Beispiel
                       Beikost, Abstillen, ...
@@ -164,7 +164,7 @@ const MyWork = () =>{
                 </div>
                 <div className={styles.imgContainer}>
                   <Image
-                    src={WB}
+                    src={thirdImg}
                     className={styles.thirdImage}
                     alt="something"
                     aria-label="something"
@@ -178,7 +178,7 @@ const MyWork = () =>{
               <div className={styles.fieldB}>
                 <div className={styles.imgContainer}>
                   <Image
-                    src={SV}
+                    src={fourthImg}
                     className={styles.thirdImage}
                     alt="something"
                     aria-label="something"

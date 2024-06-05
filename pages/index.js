@@ -17,13 +17,11 @@ import '../styles/App.css'
 
 const Start = () => {
   return (
-    <div className="main-container">
-     
-        <Layout> 
-            <HeaderImg />
-        </Layout>
+    <Layout> 
+        <HeaderImg />
+    </Layout>
        
-    </div>
+
   );
 };
 

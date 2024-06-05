@@ -1,7 +1,7 @@
 
 
 //STYLES
-import mobileImg from "./Images/mobileImg.jpg";
+import mobileImg from "./Images/start.jpg";
 import Image from "next/image";
 import styles from '../styles/HeaderImg.module.css'
 

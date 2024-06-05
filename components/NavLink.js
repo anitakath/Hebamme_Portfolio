@@ -15,7 +15,8 @@ function NavLink({ href, children }) {
   const isActive = router.pathname === href;
 
   // Weise eine andere Klasse basierend auf isActive zu
-  const className = isActive ? "active" : "inactive";
+  const className = isActive ? "activeLink" : "inactiveLink";
+
 
  
 

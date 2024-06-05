@@ -8,7 +8,7 @@ import styles from '../styles/Header.module.css'
 function Header() {
   return (
     <div className={styles.headerNavigation}>
-      <h1 className={styles.headerTitle}> Shaana Brown Näckler, Hebamme</h1>
+      <h1 className={styles.headerTitle}> Anne-Kathrin Wagner, keine Hebamme</h1>
       <Navigation />
     </div>
   );

@@ -9,15 +9,13 @@ import styles from '../styles/Footer.module.css'
 function Footer() {
   return (
     <div className={styles.footerContainer}>
-      <p> © 2023 Shaana Brown Näckler | Alle Rechte vorbehalten </p>
+      <p> © 2023 Anne-Kathrin Wagner | Alle Rechte vorbehalten </p>
       <div className={styles.footerInformation}>
         <Link href="/datensicherheit" className={styles.dataprivacyLink}>
-         
           Datenschutz
         </Link>
         |
         <Link href="/impressum" className={styles.dataprivacyLink}>
-          
           Impressum
         </Link>
       </div>
