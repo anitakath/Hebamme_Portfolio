@@ -61,22 +61,19 @@ const Contact = () => {
      hasError: hasErrorTel,
    } = useInput((value) => value.length >= 6 && value.length <= 15);
 
-
-
-
-  const {
+   const {
     value: enteredEmail,
     changeValueHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     valueIsValid: emailIsValid,
     style: emailStyle,
-  } = useInput((value) => {
-    return String(value)
+    } = useInput((value) => {
+      return String(value)
       .toLowerCase()
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
-  });
+    });
 
   let date = new Date();
   let day = date.getDate();
@@ -120,21 +117,15 @@ const Contact = () => {
   } = useInput((value) => value.trim() !== "");
 
 
-
-
-
-
-
   const [checkboxCheck, setCheckboxCheck] = useState(false);
-
-
 
   const checkboxHandler = () => {
     setCheckboxCheck((x) => !x);
   };
 
 
-   const [formComplete, setFormComplete] = useState(false);
+  const [formComplete, setFormComplete] = useState(false);
+
 
 
 
@@ -169,10 +160,16 @@ const Contact = () => {
    const [state, handleSubmit] = useForm("myyqgqrr");
 
 
+   const resetSubmittedForm = () =>{
+     setTimeout(() => {
+       localStorage.setItem("formSubmitted", false);
+     }, 10000); // 10 Sekunden in Millisekunden
+   }
+
+  
+    
 
   const submitHandler = async () => {
-    //e.preventDefault();
-
 
     const formData={
       vorname: enteredFirstName,
@@ -186,14 +183,12 @@ const Contact = () => {
       nachricht: enteredMessage,
       datenschutz: checkboxCheck
     }
-    
-
     try {
       // Senden des Vornamens an die Backend-API
-      const response = await fetch('/api/validate', {
-        method: 'POST',
+      const response = await fetch("/api/validate", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -201,13 +196,63 @@ const Contact = () => {
       const data = await response.json();
       console.log(data); // Erfolgsnachricht von der API
       handleSubmit();
+
+      // Speichern des Formularstatus im LocalStorage
+      localStorage.setItem("formSubmitted", true);
+      // aber nur für 10 Sekunden!
+      resetSubmittedForm()
+      
     } catch (error) {
       console.error(error); // Fehlermeldung bei einem Fehler in der API
+      localStorage.setItem("formSubmitted", false);
     }
   }
   
-  
-  
+
+  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [successMessage, setSucessMessage] = useState('')
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const formSubmitted = localStorage.getItem("formSubmitted");
+
+      console.log(formSubmitted);
+
+      if (formSubmitted === "true") {
+        console.log("Das Formular wurde erfolgreich abgeschickt.");
+        setSucessMessage("Das Formular wurde erfolgreich abgeschickt.");
+
+        setFormSubmitted(true);
+      } else if (formSubmitted === "false") {
+        console.log("Beim Absenden des Formulars ist ein Fehler aufgetreten.");
+
+        setSucessMessage(
+          "Beim Absenden des Formulars ist ein Fehler aufgetreten."
+        );
+
+        setFormSubmitted(false);
+      } else {
+        console.log("Das Formular wurde noch nicht abgeschickt.");
+
+        setSucessMessage("Das Formular wurde noch nicht abgeschickt.");
+
+        setFormSubmitted(false);
+      }
+    }
+  }, [formComplete]);
+
+
+   useEffect(() => {
+     const resetSubmittedForm = () => {
+       setTimeout(() => {
+         localStorage.setItem("formSubmitted", false);
+       }, 10000); // 10 Sekunden in Millisekunden
+     };
+
+     resetSubmittedForm();
+   }, [formSubmitted]);
+
+ 
   
 
 
@@ -380,6 +425,8 @@ const Contact = () => {
                 className="input"
               ></textarea>
               <p>* bitte nutze maximal 140 Zeichen </p>
+
+              {formSubmitted && <p className={styles.successMessage}> {successMessage} </p>}
               <ValidationError
                 prefix="message"
                 field="message"

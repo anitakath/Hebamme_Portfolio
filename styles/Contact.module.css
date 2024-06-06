@@ -154,7 +154,19 @@
 
 
 
-
+.successMessage{
+    color: beige;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color:#7392B7;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px grey;
+}
 
 
 @media screen and (max-width: 1400px){
