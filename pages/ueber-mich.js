@@ -5,6 +5,8 @@ import Layout from "../components/Layout";
 
 //STYLES
 import styles from "../styles/aboutme.module.css";
+import layout from '../styles/Section_Layout.module.css'
+
 
 //IMAGES
 import Image from "next/image";
@@ -24,16 +26,17 @@ const AboutMe = () => {
           content="Hebamme, Schwangerschaft, Geburtshilfe, Betreuung"
         />
       </Head>
-      <div className={styles.container}>
-        <div className={styles.sectionContainer}>
-          <div className={styles.aboutMeTextContainer}>
-            <h1> Meine Hebammenarbeit </h1>
-            <p className={styles.paragraph}>
+      <div className={layout.container}>
+        <div className={layout.sectionContainer}>
+          <div className={layout.containerContainer}>
+            <h1 className={layout.title}> Meine Hebammenarbeit </h1>
+            <p className={layout.paragraph}>
               Mein Fokus als Hebamme liegt auf der Betreuung während der
               Schwangerschaft sowie in der Zeit nach der Geburt. Um eine
               ganzheitliche und moderne Betreuung zu ermöglichen, verbinde ich
               traditionelles Hebammenwissen mit den neuesten Erkenntnissen der
-              Geburtshilfe. <br />
+              Geburtshilfe.
+              <br />
               <br />
               Ich bin fest davon überzeugt, dass eine ganzheitliche Betreuung,
               die auf dem Verständnis der physiologischen Prozesse und den
@@ -54,9 +57,9 @@ const AboutMe = () => {
             </p>
           </div>
 
-          <div className={styles.aboutMeTextContainer}>
-            <h1> Mein Werdegang </h1>
-            <p className={styles.paragraph}>
+          <div className={layout.containerContainer}>
+            <h1 className={layout.title}> Mein Werdegang </h1>
+            <p className={layout.paragraph}>
               2018 habe ich meine einjährige Dia Doula Ausbildung in Graz
               erfolgreich abgeschlossen. Als Dia Doula habe ich wertvolle
               Fähigkeiten und Techniken erlernt, um Frauen während der

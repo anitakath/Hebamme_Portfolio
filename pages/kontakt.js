@@ -13,8 +13,6 @@ import '../styles/Input.css'
 import useInput from "@/hooks/use-input";
 
 
-
-
 const Contact = () => {
 
    // ---------------------------- USE INPUT

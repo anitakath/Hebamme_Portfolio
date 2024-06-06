@@ -1,0 +1,9 @@
+
+
+
+
+//CONTACT.JS => 
+//der User soll, wenn er von der formspree erfolgspage zurück auf das kontaktformular navigiert, 
+// eine Erfolgsnachricht erhalten (Kontaktdatener erflgreich übermittelt).
+// ERFOLGSNACHRICHT SOLL SICH NUN NACH X SEKUNDEN WIEDER VOM BILDSCHIRM ENTFERNEN UND DER LOCALSTORAGE "FORMSUBMITTED" AUF FALSE GESETZT WERDEN!!
+

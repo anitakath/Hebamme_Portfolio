@@ -60,6 +60,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
    
 }
 
@@ -80,7 +81,7 @@
 
 
 
-.text p, .text ul li{
+/*.text p, */.text ul li{
     transition: 0.4s ease;
     width: 90%;
     font-size: 1.4rem;
@@ -116,12 +117,9 @@
 
 
 
-.contactLinkInfo{
-    text-align: center;
-}
 
 .contactLink{
-    width: 100%;
+    width: 50%;
     color:#7392B7;
     text-decoration: none;
     font-size: 1.5rem;
@@ -130,10 +128,17 @@
     transition: 0.5s ease;
     margin-top: 10px;
     margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 5px;
 }
 
 .contactLink:hover{
-    color: darkblue;
+    color: beige;
+    background:#7392B7;
+    box-shadow: 0px 0px 4px lightgrey;
 }
 
 
@@ -184,7 +189,7 @@
         font-size: 1.5rem;
     }
 
-    .myWorkSubtitle, .text p, .text ul li{
+    .myWorkSubtitle,/* .text p, */ .text ul li{
        font-size: 1.5rem;
     }
 
