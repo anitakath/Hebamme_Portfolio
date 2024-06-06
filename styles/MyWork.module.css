@@ -143,10 +143,9 @@
 
 
 
+@media screen and (max-width: 1300px){
 
-@media only screen and (max-width: 1300px){
-
-   .fieldA{
+    .fieldA{
        flex-direction: column;
        align-items: center;
    }
@@ -156,20 +155,17 @@
        align-items: center;
    }
 
-   .imgContainer{
-       width: 99%;
-      
-       
-   }
+    .imgContainer{
+       width: 99%; 
+    }
 
 
    .text{
        width: 100vw;
 
    }
-   
 
-  
+
 
    .text ul{
     width: 75%;
@@ -177,8 +173,41 @@
     left: -15px;
    }
 
- 
+
+
+    
 }
+
+
+@media screen and (max-width: 1000px){
+    .aboutMeTextContainer p {
+        font-size: 1.5rem;
+    }
+
+    .myWorkSubtitle, .text p, .text ul li{
+       font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+     .aboutMeTextContainer{
+        width: 95%;
+    }
+
+    .aboutMeTextContainer p {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 1000px){
 
@@ -186,22 +215,17 @@
         margin: 30px
     }
 
+    
     .myWorkSubtitle{
         background-color: rgba(255,255,255, 0.3);
         padding: 10px;
         width: 90%;
-        font-size: 1.6rem;
-        line-height: 45px;
+        line-height: 30px;
     }
-
+*
     .text h1{
         border-bottom: 1px solid grey;
         padding-bottom: 5px;
-    }
-
-    .text p, .text ul li {
-       font-size: 2rem;
-       line-height: 45px;
     }
 
     .text ul{
@@ -217,17 +241,6 @@
 }
 
 
-@media only screen and (max-width: 600px){
-
-   .firstImage, .secondImage, .thirdImage, .fourthImage{
-       height: 500px;
-       
-    }
-
-    
-    
-
-}
 
 
 /*

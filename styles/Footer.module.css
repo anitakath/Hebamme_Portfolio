@@ -1,5 +1,5 @@
 
-/*
+
 .footerContainer{
     height: 10vh;
     padding: 0;
@@ -8,10 +8,14 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(238,238,238, 0.8);
     width: 100vw;
     position: relative;
     top: -8px;
+    font-size: 1rem;
+}
+
+.subtitle{
+    color: #C3A29E;
     font-size: 1rem;
 }
 
@@ -34,11 +38,10 @@
 @media screen and (max-width: 800px){
     .footerContainer{
         transition: 0.4s ease;
-        padding: 20px;
     }
 
-    .footerContainer p{
-        font-size: 0.8rem;
+    .subtitle{
+        font-size: 0.9rem;
     }
 }
 
@@ -47,4 +50,4 @@
     .dataprivacyLink{
         font-size: 1rem;
     }
-}*/
+}
