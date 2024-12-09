@@ -21,13 +21,11 @@ export default function handler(req, res){
 
   if(req.method === 'POST'){
 
-    const referer = req.headers.referer || req.headers.referrer;
-    const allowedReferer = "https://shaana.netlify.app/kontakt";
+    //const referer = req.headers.referer || req.headers.referrer;
+    //const allowedReferer = "https://hebamme.netlify.app/kontakt";
 
 
-    if (referer.startsWith(allowedReferer) === true) {
-
-      // POST kommt von Shaanas Website
+    /*if (referer.startsWith(allowedReferer) === true) {*/
 
       const {
         vorname,
@@ -188,19 +186,12 @@ export default function handler(req, res){
         message: 'Daten erfolgreich validiert!',
       });
 
-    } else {
-      // POST kommt nicht von Shaanas Website
+    /*} else {
+      // POST kommt nicht von Hebammen-Website
       res.status(403).json({ error: "Unzulässige Anfrage" });
-    }
+    }*/
   } 
 
-  /*
-   if (req.method === "GET") {
-     return res.status(200).json({
-       message: 'GET funktioniert!'
-     })
-   } 
-  */
    
 }
 

@@ -3,9 +3,7 @@
     width: 110vw;
     margin: 0;
     padding: 0;
-    border-top: 1px solid white;
-    border: 1px solid rgba(225,166,173, 0.4);
-    background-color:  rgba(225,166,173, 0.2);
+    border-top: 1px solid white;    
     position: relative;
     top: -8px;
 }
@@ -25,7 +23,6 @@
 
 
 .contactContainer h1{
-    font-size: clamp(1.8rem, 2.6vw, 2rem);
     color: #7392B7;
 }
 
@@ -34,7 +31,7 @@
     text-align: justify;
     line-height: 30px;
     margin: 30px 0px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
@@ -62,7 +59,7 @@
     width: 100%;
     margin: 18px 0px;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 
@@ -74,7 +71,7 @@
     border: none;
     outline: none;
     transition: 0.4s ease;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .formContainer textarea{
@@ -121,7 +118,7 @@
     margin: 20px;
     width: 300px;
     height: 50px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #89CFF0;
     font-weight: bolder;
     box-shadow: 0px 3px 1px #89CFF0;;
@@ -139,7 +136,7 @@
     background-color: #89CFF0;
     box-shadow: 0px 3px 1px white;
     color: white;
-    font-size: 1.25rem;
+   
 }
 
 
@@ -161,7 +158,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1rem;
     background-color:#7392B7;
     letter-spacing: 2px;
     border-radius: 4px;

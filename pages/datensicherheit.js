@@ -47,7 +47,7 @@ const DataPrivacy = () => {
                 {" "}
                 ich arbeite lediglich mit den Daten, die für den tatsächlichen
                 Verarbeitungszweck und eine erfolgreiche Vorbereitung auf deine
-                Bedürfnisse benötigt werden. <br /> Die benötigten Daten sind im
+                Bedürfnisse benötigt werden. Die benötigten Daten sind im
                 Kontaktformular mit einem Sternchen (*) gekennzeichnet. Den Rest
                 kannst du mir freiwillig mitteilen.{" "}
               </p>
@@ -55,9 +55,9 @@ const DataPrivacy = () => {
               <p>
                 {" "}
                 Deine personenbezogenen Daten verarbeite ich ausschließlich für
-                die erste Kontaktaufnahme und deine Anfragen. <br /> Das heißt,
+                die erste Kontaktaufnahme und deine Anfragen. Das heißt,
                 dass ich deine Daten nach Erlöschung des Zwecks sofort wieder
-                löschen werden. <br /> Kommt es zu einer Betreuung, dann werde
+                löschen werden. Kommt es zu einer Betreuung, dann werde
                 ich deine Daten nach Beendigung der Betreuung löschen.
               </p>
               <h1> Transparenz: </h1>
@@ -77,7 +77,7 @@ const DataPrivacy = () => {
                 Auf meiner Webseite nutze ich eine SSL-, bzw.
                 TSL-Verschlüsselung, die dafür sorgt, dass die Eingaben die Du
                 über das Kontaktformular eingibst und an mich sendest, nicht von
-                Dritten mitgelesen werden können. <br />
+                Dritten mitgelesen werden können. 
                 Erkennen kannst du die sichere Verbindung einmal an dem Schloss,
                 welches Du neben der Browserzeile findest und weiter an den
                 Anfang des Links, der wie folgt startet: "https://...". Diese

@@ -1,43 +1,40 @@
-
 import Link from "next/link";
-
-
+import { useEffect } from "react";
 //COMPONENTS
 import Layout from "@/components/Layout";
-
-
 //STYLES 
 import styles from '../styles/MyWork.module.css'
 import layout from '../styles/Section_Layout.module.css'
-
-//IMAGES
 //IMAGES 
 import firstImg from '../components/Images/abc.jpg'
 import secondImg from "../components/Images/def.jpg";
 import thirdImg from "../components/Images/ghi.jpg";
 import fourthImg from "../components/Images/jkl.jpg";
 import Image from "next/image";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const MyWork = () =>{
 
-    return (
+  useEffect(() => {
+    AOS.init({
+        duration: 1000, // Dauer der Animation
+        once: true, // Animation nur einmal ausführen
+    });
+}, []);
+
+
+  return (
       <Layout>
         <div className={layout.container}>
           <div className={styles.myWorkContainer}>
             <h1
               className={styles.myWorkTitle}
-              data-aos="zoom-in"
-              data-aos-duration="1000"
             >
               Gerne begleite ich Dich in der Schwangerschaft, im Wochenbett und
               in der Stillzeit
             </h1>
-            <p
-              className={styles.myWorkSubtitle}
-              data-aos="zoom-in"
-              data-aos-duration="1500"
-              data-aos-delay="500"
-            >
+            <p className={styles.myWorkSubtitle}>
               Von Schwangerschaftsbeginn an begleite und berate ich Dich
               fachkundig rund um Schwangerschaft, Geburt und Wochenbett. Ich
               unterstütze Dich bei körperlichen Veränderungen in der
@@ -48,7 +45,7 @@ const MyWork = () =>{
             <div className={styles.fieldA}>
               <div
                 className={styles.text}
-                data-aos="fade-left"
+                data-aos="fade-up"
                 data-aos-duration="2000"
               >
                 <h1> Schwangerenvorsorge </h1>
@@ -111,8 +108,6 @@ const MyWork = () =>{
 
               <div
                 className={styles.text}
-                data-aos="fade-right"
-                data-aos-duration="2000"
               >
                 <h1> Wochenbett und Stillzeit </h1>
 
@@ -132,8 +127,6 @@ const MyWork = () =>{
             <div className={styles.fieldA}>
               <div
                 className={styles.text}
-                data-aos="fade-left"
-                data-aos-duration="2000"
               >
                 <p className={layout.paragraph} style={{ padding: "10px" }}>
                   Während eines Hausbesuches beurteile ich die Rückbildung der
@@ -192,8 +185,6 @@ const MyWork = () =>{
 
               <div
                 className={styles.text}
-                data-aos="fade-left"
-                data-aos-duration="2000"
               >
                 <p className={layout.paragraph} style={{ padding: "10px" }}>
                   Ich freue mich, ein Teil dieses großen Abenteuers sein zu

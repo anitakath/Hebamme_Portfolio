@@ -12,7 +12,7 @@ input::placeholder {
     height: 30px;
     padding: 5px;
     transition: 0.4s ease;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-bottom: 2px solid hsl(16, 79%, 60%);;
     background-color: hsla(16, 79%, 60%, 0.6);
 }
@@ -30,7 +30,7 @@ input::placeholder {
     height: 30px;
     padding: 5px;
     transition: 0.4s ease;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color:transparent;
     border-bottom: 1px solid black;
 }
@@ -39,6 +39,6 @@ input::placeholder {
 .input:focus{
     outline: none;
     transition: 0.4s ease;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 

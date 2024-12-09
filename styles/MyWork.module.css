@@ -29,7 +29,6 @@
     text-align: center;
     padding: 10px;
     font-weight: bolder;
-    font-size: clamp(1.8rem, 2.6vw, 2rem);
     color: #7392B7;
 }
 
@@ -39,7 +38,7 @@
     width: 90vw;
     line-height: 30px;
     padding: 15px 0px; 
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 
@@ -49,7 +48,6 @@
 .fieldA, .fieldB{
     display: flex;
     width: 100%;
-
     
 }
 
@@ -60,6 +58,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0px 10px;
     
    
 }
@@ -75,7 +74,7 @@
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -84,7 +83,7 @@
 /*.text p, */.text ul li{
     transition: 0.4s ease;
     width: 90%;
-    font-size: 1.4rem;
+    font-size: 1rem;
     text-align:justify;
     text-justify: inter-word;
     -webkit-hyphens: auto;
@@ -103,7 +102,7 @@
 }
 
 .imgContainer{
-    width: 50%;
+    width: 60%;
 }
 
 

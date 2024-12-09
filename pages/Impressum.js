@@ -26,10 +26,10 @@ const Impressum = () =>{
                 > wagner.annekathrin@gmx.de </a>
               </p>
               <p>
-                Ich bin Hebamme in Hamburg und der Behörde für Arbeit,
-                Gesundheit, Soziale Familie und Integration zugehörig. Zudem
-                bin ich Mitglied beim Deutschen Hebammenverband und
-                berücksichtige während meiner Arbeit stets die offiziellen
+                Ich bin <strong> KEINE </strong>Hebamme in Hamburg und der Behörde für Arbeit,
+                Gesundheit, Soziale Familie und Integration <strong> NICHT </strong> zugehörig. Zudem
+                bin ich <strong> KEIN </strong> Mitglied beim Deutschen Hebammenverband und
+                berücksichtige während meiner Arbeit <strong> DEMENTSPRECHEND AUCH NICHT </strong> die offiziellen
                 <Link
                     href="https://www.g-ba.de/richtlinien/19/"
                     target="_blank"
@@ -38,6 +38,8 @@ const Impressum = () =>{
                   Mutterschaftsrichtlinien.
                 </Link>
               </p>
+              <p> DIESE SEITE DIENT LEDIGLICH NUR DEMOZWECKEN! </p>
+              <p> ABER  KONTAKTIER MICH TROTZDEM GERN :-) </p>
               <p>
                 Folgend meine Umsatzsteueridentifikationsnummer (USt-ID):
                 00/000/00000

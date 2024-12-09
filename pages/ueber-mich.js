@@ -11,8 +11,18 @@ import layout from '../styles/Section_Layout.module.css'
 //IMAGES
 import Image from "next/image";
 import aboutMeImg from "../components/Images/start.jpg";
-
+import { useEffect } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 const AboutMe = () => {
+
+  useEffect(() => {
+    AOS.init({
+        duration: 1000, // Dauer der Animation
+        once: true, // Animation nur einmal ausführen
+    });
+}, []);
+
   return (
     <Layout>
       <Head>
@@ -26,11 +36,14 @@ const AboutMe = () => {
           content="Hebamme, Schwangerschaft, Geburtshilfe, Betreuung"
         />
       </Head>
-      <div className={layout.container}>
+      <div className={layout.container}  
+            data-aos="fade-up"
+            data-aos-duration="2000">
         <div className={layout.sectionContainer}>
           <div className={layout.containerContainer}>
             <h1 className={layout.title}> Meine Hebammenarbeit </h1>
             <p className={layout.paragraph}>
+              <strong> **DEMO** </strong><br/>
               Mein Fokus als Hebamme liegt auf der Betreuung während der
               Schwangerschaft sowie in der Zeit nach der Geburt. Um eine
               ganzheitliche und moderne Betreuung zu ermöglichen, verbinde ich

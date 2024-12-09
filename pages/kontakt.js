@@ -7,13 +7,28 @@ import Layout from "@/components/Layout";
 //STYLES
 import styles from '../styles/Contact.module.css'
 import '../styles/Input.css'
- import "styled-jsx/style";
+import "styled-jsx/style";
 
 //HOOKS
 import useInput from "@/hooks/use-input";
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Contact = () => {
+
+  useEffect(() => {
+    AOS.init({
+        duration: 1000, // Dauer der Animation
+        once: true, // Animation nur einmal ausführen
+    });
+}, []);
+
+
+  const [state, handleSubmit] = useForm("myyqgqrr");
+  const [checkboxCheck, setCheckboxCheck] = useState(false);
+  const [formComplete, setFormComplete] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [successMessage, setSucessMessage] = useState('')
 
    // ---------------------------- USE INPUT
    const {
@@ -115,14 +130,13 @@ const Contact = () => {
   } = useInput((value) => value.trim() !== "");
 
 
-  const [checkboxCheck, setCheckboxCheck] = useState(false);
+
 
   const checkboxHandler = () => {
     setCheckboxCheck((x) => !x);
   };
 
 
-  const [formComplete, setFormComplete] = useState(false);
 
 
 
@@ -155,7 +169,7 @@ const Contact = () => {
 
 
 
-   const [state, handleSubmit] = useForm("myyqgqrr");
+   
 
 
    const resetSubmittedForm = () =>{
@@ -207,8 +221,7 @@ const Contact = () => {
   }
   
 
-  const [formSubmitted, setFormSubmitted] = useState(false)
-  const [successMessage, setSucessMessage] = useState('')
+
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -257,7 +270,9 @@ const Contact = () => {
   return (
     <div>
       <Layout>
-        <div className={styles.sectionContainer}>
+        <div className={styles.sectionContainer}  
+              data-aos="fade-up"
+              data-aos-duration="2000">
           <div className={styles.contactContainer}>
             <h1>Kontaktiere mich</h1>
 
