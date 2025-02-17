@@ -1,19 +1,9 @@
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
-
-
-
-import Link from "next/link";
+import React from "react";
 import NavLink from "./NavLink";
-
 import '../styles/Modal.css'
-
 //FONT AWESOME
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
-
-
-
 
 function Modal (props){
 

@@ -1,15 +1,4 @@
 
-.sectionContainer{
-    background-color:  rgba(225,166,173, 0.2);
-    width: 100%;
-    border: 1px solid rgba(225,166,173, 0.4);
-    position: relative;
-    top: -8px;
-
-    
-
-}
-
 .myWorkContainer{
     display: flex;
     flex-direction: column;
@@ -17,100 +6,108 @@
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    margin-top: 12vh;
+    margin-top: 20px;
     overflow-x: hidden;
-    
+}
+
+
+.myWorkHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 
 
-
-.myWorkTitle{
+.headerTitle{
     text-align: center;
     padding: 10px;
     font-weight: bolder;
     color: #7392B7;
+    font-size: 1.2rem;
 }
 
 
-.myWorkSubtitle{
+.headerSubtitle{
     text-align: justify;
-    width: 90vw;
-    line-height: 30px;
-    padding: 15px 0px; 
+    width: 95%;
+    line-height: 20px;
     font-size: 1rem;
 }
-
-
 
 
 
 .fieldA, .fieldB{
     display: flex;
     width: 100%;
-    
+    padding: 0;
+    margin: 0;
 }
 
-.text{
+.textDiv{
     width: 50%;
-    min-height: 600px;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 0px 10px;
-    
-   
-}
-
-
-
-
-
-
-.text ul{
-    text-align:justify;
-    text-justify: inter-word;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    width: 100%;
-}
-
-
-
-
-/*.text p, */.text ul li{
-    transition: 0.4s ease;
-    width: 90%;
-    font-size: 1rem;
-    text-align:justify;
-    text-justify: inter-word;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    line-height: 30px;
-}
-
-
-
-
-
-.text h1{
-    color: #7392B7;
-    margin-top: 50px;
+    justify-content: center;
 }
 
 .imgContainer{
-    width: 60%;
+    height: 500px;
+    width: 50%;
 }
+
+.textDiv h1{
+    font-size: 1.2rem;
+    margin: 20px;
+    color:#7392B7;
+}
+
+.paragraph{
+    margin: 20px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.table{
+    /*list-style: none;*/
+    margin: 20px;
+}
+
+/*
+.table li::marker {
+    content: ""; 
+    color: green;  
+}*/
+
+.table li{
+    margin: 5px 0px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .firstImage, .secondImage, .thirdImage, .fourthImage{
     width: 100%;
-    height: 800px;
+    height: 100%;
     object-fit: cover;
     transition: 0.2s ease;
+   
 }
 
 
@@ -126,7 +123,6 @@
     margin-bottom: 20px;
     transition: 0.5s ease;
     margin-top: 10px;
-    margin-left: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,56 +148,30 @@
     .fieldA{
        flex-direction: column;
        align-items: center;
-   }
+    }
 
-   .fieldB{
+    .fieldB{
        flex-direction: column-reverse;
        align-items: center;
-   }
+    }
+   
 
+   
     .imgContainer{
        width: 99%; 
     }
 
 
-   .text{
-       width: 100vw;
+    .textDiv{
+       width: 99%;
+       height: 500px;
+       overflow: scroll;
+    }
 
-   }
-
-
-
-   .text ul{
-    width: 75%;
-    position: relative;
-    left: -15px;
-   }
-
-
-
+    .table{
+        width: 97%;
+    }
     
-}
-
-
-@media screen and (max-width: 1000px){
-    .aboutMeTextContainer p {
-        font-size: 1.5rem;
-    }
-
-    .myWorkSubtitle,/* .text p, */ .text ul li{
-       font-size: 1.5rem;
-    }
-
-}
-
-@media screen and (max-width: 600px){
-     .aboutMeTextContainer{
-        width: 95%;
-    }
-
-    .aboutMeTextContainer p {
-        font-size: 1.2rem;
-    }
 }
 
 
@@ -215,86 +185,18 @@
 
 @media only screen and (max-width: 1000px){
 
-    .text{
-        margin: 30px
+    .headerTitle{
+        font-size: 1.1rem;
     }
-
-    
-    .myWorkSubtitle{
-        background-color: rgba(255,255,255, 0.3);
-        padding: 10px;
-        width: 90%;
-        line-height: 30px;
-    }
-*
-    .text h1{
-        border-bottom: 1px solid grey;
-        padding-bottom: 5px;
-    }
-
-    .text ul{
-        margin: 30px 0px;
-    }
-
-    .contactLink{
-        font-size: 2rem;
-    }
-
-
-
-}
-
-
-
-
-/*
-
-@media only screen and (max-width: 600px){
-
- 
-
-    .myWorkSubtitle{
-        text-align: left;
-    }
-
-    
-
-    .text p{
-       width: 90%;
-       text-align: left;
-    }
-
-   .text ul li{
-       width: 100%;
-       text-align: left;
-   }
-}
-
-
-
-
-
-@media only screen and (max-width: 500px){
-
   
+    .textDiv h1{
+        font-size: 1.1rem;
+    }
+   
+    .imgContainer{
+        box-shadow: 0px 0px 5px lightgrey;
+     
+    }
 
-    
-
-  
-}
-
-
-
-
-
-@media only screen and (max-width: 300px){
-
-   .myWorkTitle{
-        min-height: 15vh;
-   }
 
 }
-
-
-
-*/

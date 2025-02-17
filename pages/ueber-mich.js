@@ -1,16 +1,12 @@
 import Head from "next/head";
-
 //COMPONENTS
 import Layout from "../components/Layout";
-
 //STYLES
 import styles from "../styles/aboutme.module.css";
 import layout from '../styles/Section_Layout.module.css'
-
-
 //IMAGES
 import Image from "next/image";
-import aboutMeImg from "../components/Images/start.jpg";
+import aboutMeImg from "../components/Images/pexels-pavel-danilyuk-7055678.jpg";
 import { useEffect } from "react";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -40,7 +36,7 @@ const AboutMe = () => {
             data-aos="fade-up"
             data-aos-duration="2000">
         <div className={layout.sectionContainer}>
-          <div className={layout.containerContainer}>
+          <div className={layout.subContainer}>
             <h1 className={layout.title}> Meine Hebammenarbeit </h1>
             <p className={layout.paragraph}>
               <strong> **DEMO** </strong><br/>
@@ -70,7 +66,7 @@ const AboutMe = () => {
             </p>
           </div>
 
-          <div className={layout.containerContainer}>
+          <div className={layout.subContainer}>
             <h1 className={layout.title}> Mein Werdegang </h1>
             <p className={layout.paragraph}>
               2018 habe ich meine einjährige Dia Doula Ausbildung in Graz

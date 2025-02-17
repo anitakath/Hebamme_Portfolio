@@ -43,7 +43,15 @@
     margin: 10px 0px;
     padding: 10px 0px;
     justify-content: center;
+    transition: 0.4s ease-in-out;
 }
+
+.navigationModal li:hover{
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 
 .inactive{
     text-decoration: none;

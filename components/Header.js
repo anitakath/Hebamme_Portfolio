@@ -1,6 +1,4 @@
 import Navigation from "./Navigation";
-
-
 //STYLES
 import styles from '../styles/Header.module.css'
 

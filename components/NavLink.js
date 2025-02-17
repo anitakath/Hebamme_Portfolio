@@ -1,9 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-
-
 //STYLES
-import styles from '../styles/Navigation.module.css'
 import '../styles/Navigation.css'
 
 

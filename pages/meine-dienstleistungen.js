@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Layout from "@/components/Layout";
 //STYLES 
 import styles from '../styles/MyWork.module.css'
-import layout from '../styles/Section_Layout.module.css'
 //IMAGES 
 import firstImg from '../components/Images/abc.jpg'
 import secondImg from "../components/Images/def.jpg";
@@ -14,7 +13,7 @@ import Image from "next/image";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-const MyWork = () =>{
+const MyWork = () =>{ 
 
   useEffect(() => {
     AOS.init({
@@ -26,33 +25,37 @@ const MyWork = () =>{
 
   return (
       <Layout>
-        <div className={layout.container}>
-          <div className={styles.myWorkContainer}>
+        <div className={styles.myWorkContainer}>
+          <div className={styles.myWorkHeader}>
             <h1
-              className={styles.myWorkTitle}
+                className={styles.headerTitle}
             >
-              Gerne begleite ich Dich in der Schwangerschaft, im Wochenbett und
-              in der Stillzeit
-            </h1>
-            <p className={styles.myWorkSubtitle}>
-              Von Schwangerschaftsbeginn an begleite und berate ich Dich
-              fachkundig rund um Schwangerschaft, Geburt und Wochenbett. Ich
-              unterstütze Dich bei körperlichen Veränderungen in der
-              Schwangerschaft, gebe Dir Hilfe bei Beschwerden, fördere Deine
-              Gesundheit und die Deines Babys. 
+                Gerne begleite ich Dich in der Schwangerschaft, im Wochenbett und
+                in der Stillzeit
+              </h1>
+              <p className={styles.headerSubtitle}>
+                Von Schwangerschaftsbeginn an begleite und berate ich Dich
+                fachkundig rund um Schwangerschaft, Geburt und Wochenbett. Ich
+                unterstütze Dich bei körperlichen Veränderungen in der
+                Schwangerschaft, gebe Dir Hilfe bei Beschwerden, fördere Deine
+                Gesundheit und die Deines Babys. 
             </p>
+
+          </div>
+
+          <div className={styles.myWorkField}>
 
             <div className={styles.fieldA}>
               <div
-                className={styles.text}
+                className={styles.textDiv}
                 data-aos="fade-up"
                 data-aos-duration="2000"
               >
                 <h1> Schwangerenvorsorge </h1>
                 <p
                   id="first_Paragraph"
-                  className={layout.paragraph}
-                  style={{ padding: "10px" }}
+                  className={styles.paragraph}
+              
                 >
                   Ich führe eigenständig und in Zusammenarbeit mit der
                   betreuenden Gynäkologin oder dem betreuenden Gynäkologen
@@ -65,7 +68,7 @@ const MyWork = () =>{
                   Zu jeder Hebammenvorsorge gehört eine körperliche
                   Untersuchung, die Folgendes beinhaltet:
                 </p>
-                <ul>
+                <ul className={styles.table}>
                   <li> Ertasten der Lage und Größe des Babys </li>
                   <li>
                     Messen deines Bauchumfangs und des Symphysen-Fundus-Abstands{" "}
@@ -107,11 +110,11 @@ const MyWork = () =>{
               </div>
 
               <div
-                className={styles.text}
+                className={styles.textDiv}
               >
                 <h1> Wochenbett und Stillzeit </h1>
 
-                <p className={layout.paragraph} style={{ padding: "10px" }}>
+                <p className={styles.paragraph}>
                   Das Wochenbett ist eine bedeutende Phase, die unmittelbar nach
                   der Geburt Deines Kindes beginnt und 8 Wochen andauert. In
                   dieser Zeit des Ankommens, der Regeneration, des Kennenlernens
@@ -126,9 +129,9 @@ const MyWork = () =>{
 
             <div className={styles.fieldA}>
               <div
-                className={styles.text}
+                className={styles.textDiv}
               >
-                <p className={layout.paragraph} style={{ padding: "10px" }}>
+                <p className={styles.paragraph}>
                   Während eines Hausbesuches beurteile ich die Rückbildung der
                   Gebärmutter, die Wundheilung einer Naht, untersuche die Brüste
                   bei Bedarf und ich arbeite auch gerne mit Massagen im
@@ -143,7 +146,7 @@ const MyWork = () =>{
                   unterschiedlichsten Themen:
                 </p>
 
-                <ul>
+                <ul className={styles.table}>
                   <li> Stillen und Ernährung </li>
                   <li> Begleitung und Tragen des Babys </li>
                   <li> Babypflege </li>
@@ -184,9 +187,9 @@ const MyWork = () =>{
               </div>
 
               <div
-                className={styles.text}
+                className={styles.textDiv}
               >
-                <p className={layout.paragraph} style={{ padding: "10px" }}>
+                <p className={styles.paragraph}>
                   Ich freue mich, ein Teil dieses großen Abenteuers sein zu
                   dürfen! Zögere nicht, mich zu kontaktieren, um weitere
                   Informationen zu erhalten.
@@ -196,8 +199,10 @@ const MyWork = () =>{
                 </Link>
               </div>
             </div>
+
           </div>
-        </div>
+          </div>
+   
       </Layout>
     );
 }
