@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Layout from "@/components/Layout";
 //STYLES 
 import styles from '../styles/MyWork.module.css'
+import layout from '../styles/Section_Layout.module.css'
 //IMAGES 
 import firstImg from '../components/Images/abc.jpg'
 import secondImg from "../components/Images/def.jpg";

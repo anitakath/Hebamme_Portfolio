@@ -1,7 +1,4 @@
 import Link from 'next/link';
-
-
-
 //STYLES
 import styles from '../styles/Footer.module.css'
 

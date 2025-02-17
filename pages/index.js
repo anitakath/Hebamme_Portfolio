@@ -1,9 +1,3 @@
-import React from "react";
-
-
-
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 
 //COMPONENTS
@@ -20,8 +14,6 @@ const Start = () => {
     <Layout> 
         <HeaderImg />
     </Layout>
-       
-
   );
 };
 

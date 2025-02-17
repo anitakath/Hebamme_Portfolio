@@ -20,8 +20,8 @@ const DataPrivacy = () => {
               data-aos-delay="200"
               data-aos-duration="1000"
             >
-              <h3>
-                {" "}
+              <h3 className={styles.subTitle}>
+               
                 mit der hier aufgeführten Datenschutzerklärung möchte ich dich
                 über die Verarbeitung deiner personenbezogenen Daten informieren
                 und dir versichern, dass ich mich in meiner Arbeit mit deinen

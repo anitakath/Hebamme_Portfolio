@@ -2,6 +2,7 @@
 
 .sectionContainer{
     min-height: 100vh;
+    width: 100%;
     margin: 0;
     padding: 0;
     border-top: 1px solid white;
@@ -9,7 +10,9 @@
     display: flex;
     justify-content: center;
     position: relative;
-    top: -8px;
+    top: 0px;
+
+
 }
 
 .aboutDataprivacyContainer{
@@ -17,11 +20,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    margin-top: 12vh;
+    width: 100%;
     padding: 10px;
     height: 100vh;
     overflow: scroll;
+
 }
 
 
@@ -34,12 +37,16 @@
     align-items: center;
     justify-content: center;
     color: black;
+    font-size: 1.2rem;
+
 }
+
+
 
 
 .dataprivacyInfo{
     height: 100vh;
-    width: 80vw;
+    width: 80%;
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -59,8 +66,10 @@
 .dataprivacyInfo p{
     color: black;
     letter-spacing: 1px;
-    line-height: 40px;
+    line-height: 20px;
     text-align: justify;
+    font-size: 1rem;
+
     
 }
 
@@ -73,9 +82,8 @@
 
     .aboutDataprivacyContainer{
         transition: 0.4s ease;
-        background-position: -200px;
         display: flex;
-        justify-content: center;
+ 
     }
 
 
@@ -86,10 +94,8 @@
 }
 
 @media screen and (max-width: 600px){
-    .dataprivacyInfo h3{
-        text-align: left;
-        line-height: 19px;
-     
+    .subTitle{
+        line-height: 25px;
     }
 
     .dataprivacyInfo p{
@@ -101,28 +107,30 @@
 
 @media screen and (max-width: 400px){
 
+
+
     .aboutDataprivacyContainer{
         transition: 0.4s ease;
-        width: 90vw;
-        
+        width: 100%;
+        padding: 0;
+        margin:0;
     }
 
-    .aboutDataprivacyContainer h1{
-        font-size: 1.1rem;
-        
-        
+    .dataprivacyInfo{
+        margin: 0;
+        padding: 0;
+
     }
 
-    .aboutDataprivacyContainer p{
-        font-size: 0.7rem;
-        
-       
+    .aboutDataprivacyContainer h1 {
+        margin-top: 30px;
+
     }
 
-    .aboutDataprivacyContainer h3{
-        font-size: 0.8rem;
-        margin-bottom: 40px;
-        
-     
+    .dataprivacyInfo p{
+        text-align: justify;
+        margin: 0;
     }
+
+  
 }

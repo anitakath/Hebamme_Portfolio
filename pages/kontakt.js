@@ -1,14 +1,11 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { useState, useEffect } from "react";
-
 //COMPONENTS
 import Layout from "@/components/Layout";
-
 //STYLES
 import styles from '../styles/Contact.module.css'
 import '../styles/Input.css'
 import "styled-jsx/style";
-
 //HOOKS
 import useInput from "@/hooks/use-input";
 import AOS from 'aos'
@@ -268,7 +265,7 @@ const Contact = () => {
 
 
   return (
-    <div>
+
       <Layout>
         <div className={styles.sectionContainer}  
               data-aos="fade-up"
@@ -434,10 +431,9 @@ const Contact = () => {
               <textarea
                 id="user"
                 name="nachricht"
-                placeholder="schreibe mir gern weitere anliegen / fragen"
                 className="input"
               ></textarea>
-              <p>* bitte nutze maximal 140 Zeichen </p>
+              <p className={styles.InfoParagraph}>* bitte nutze maximal 140 Zeichen </p>
 
               {formSubmitted && <p className={styles.successMessage}> {successMessage} </p>}
               <ValidationError
@@ -476,7 +472,7 @@ const Contact = () => {
           </div>
         </div>
       </Layout>
-    </div>
+
   );
 };
 

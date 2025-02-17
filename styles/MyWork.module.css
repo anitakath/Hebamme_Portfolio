@@ -8,6 +8,8 @@
     min-height: 100vh;
     margin-top: 20px;
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -37,6 +39,9 @@
     font-size: 1rem;
 }
 
+.myWorkField{
+    width: 100%;
+}
 
 
 .fieldA, .fieldB{
@@ -63,7 +68,7 @@
 
 .textDiv h1{
     font-size: 1.2rem;
-    margin: 20px;
+    margin: 10px;
     color:#7392B7;
 }
 
@@ -75,7 +80,7 @@
 
 .table{
     /*list-style: none;*/
-    margin: 20px;
+    width: 90%;
 }
 
 /*
@@ -163,14 +168,15 @@
 
 
     .textDiv{
-       width: 99%;
-       height: 500px;
+       width: 100%;
+       min-height: 200px;
+       max-height: 500px;
        overflow: scroll;
+
+       margin: 10px 0px;
     }
 
-    .table{
-        width: 97%;
-    }
+
     
 }
 
@@ -192,11 +198,4 @@
     .textDiv h1{
         font-size: 1.1rem;
     }
-   
-    .imgContainer{
-        box-shadow: 0px 0px 5px lightgrey;
-     
-    }
-
-
 }

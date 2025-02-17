@@ -37,6 +37,7 @@ const AboutMe = () => {
             data-aos-duration="2000">
         <div className={layout.sectionContainer}>
           <div className={layout.subContainer}>
+            
             <h1 className={layout.title}> Meine Hebammenarbeit </h1>
             <p className={layout.paragraph}>
               <strong> **DEMO** </strong><br/>

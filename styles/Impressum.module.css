@@ -20,7 +20,7 @@
     font-weight: bolder;
     text-decoration: none;
     margin: 0px 10px;
-    font-size: clamp(1.2rem, 1.9vw, 1.3rem);
+    font-size: 1rem;
 }
 
 
@@ -32,11 +32,13 @@
     width: 80%;
     transition: 0.4s ease;
     padding: 10px;
+
 }
+
 
 .email{
     font-weight: bolder;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #89CFF0;
     text-decoration: none;
 }
@@ -49,8 +51,8 @@
 
 .infoWrapper p{
     color: black;
-    line-height: 20px;
-    text-align: justify;
+    line-height: 25px;
+
     
 }
 
@@ -61,8 +63,7 @@
 
 
     .info p{
-        font-size: 1.2rem;
-        border: 2px solid orange;
+        font-size: 1rem;
     }
 }
 
@@ -73,9 +74,6 @@
         text-align: left;
         hyphens: auto;
         word-spacing:-2px;
-        font-size: 1.2rem;
-
-        border: 2px solid green;
     }
 
 
@@ -85,7 +83,7 @@
 
     .infoWrapper h2{
         word-break: break-all;
-        width: 100vw;
+        width: 100%;
 
     }
     .email{
