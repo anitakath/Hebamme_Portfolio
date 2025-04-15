@@ -3,6 +3,15 @@
 
 
 
+.primaryContainer{
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
 .background{
     position: fixed;
     top: 0;
@@ -19,7 +28,7 @@
 
 .navigationModal{
     transition: 0.4s ease;
-    z-index: 100;
+    z-index: 10000;
     position: fixed;
     top: 0vh;
     left: 0;
@@ -101,4 +110,6 @@
         font-size: 1rem;
     }
 }
+
+
 

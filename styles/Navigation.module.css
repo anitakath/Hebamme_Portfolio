@@ -1,10 +1,9 @@
 
 .navigationContainer{
     width: 100%;
-    z-index: 100;
     position: relative;
-}
 
+}
 .navigation{
     display: flex;
     justify-content: center;
@@ -15,7 +14,6 @@
 
 .mobileNav{
     display: none;
-    z-index: 100;
 }
 
 

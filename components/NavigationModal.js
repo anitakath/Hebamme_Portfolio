@@ -49,7 +49,7 @@ function Modal (props){
     }
 
     return (
-      <div>
+      <div className="primaryContainer">
         <Background></Background>
         <NavigationModal></NavigationModal>
       </div>

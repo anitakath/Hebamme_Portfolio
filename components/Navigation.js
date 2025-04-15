@@ -42,10 +42,12 @@ const Navigation = () => {
             onClick={mobileNavigationHandler}
           />
         )}
-        {showNavigationModal && (
+       
+      </div>
+
+      {showNavigationModal && (
           <Modal showNavigationModal={showNavigationModal} setShowNavigationModal={setShowNavigationModal}></Modal>
         )}
-      </div>
     </nav>
   );
 };
