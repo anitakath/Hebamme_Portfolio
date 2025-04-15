@@ -12,7 +12,7 @@ function Footer() {
           Datenschutz
         </Link>
         |
-        <Link href="/impressum" className={styles.dataprivacyLink}>
+        <Link href="/" className={styles.impressumLink}>
           Impressum
         </Link>
       </div>

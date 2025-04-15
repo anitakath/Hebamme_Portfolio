@@ -21,11 +21,23 @@
 
 .footerInformation{
     margin: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
 .dataprivacyLink{
     color: #7392B7;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0px 10px;
+}
+
+.impressumLink{
+    color: lightgrey;
     text-decoration: none;
     font-size: 1.2rem;
     margin: 0px 10px;
